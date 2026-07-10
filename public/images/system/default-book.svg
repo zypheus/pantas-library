@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" role="img" aria-label="Default book cover">
+  <rect width="160" height="220" rx="6" fill="#cbd5e1"/>
+  <rect x="18" y="24" width="124" height="12" rx="4" fill="#94a3b8"/>
+  <rect x="18" y="48" width="96" height="8" rx="4" fill="#94a3b8"/>
+  <rect x="18" y="64" width="110" height="8" rx="4" fill="#94a3b8"/>
+  <text x="80" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">No cover</text>
+</svg>

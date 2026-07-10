@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Design-system color tokens (React admin shell / shadcn).
+ * Per-school colors live in public/branding/branding.css as --brand-* variables.
+ */
+:root {
+    --brand-blue: #1f4ea7;
+    --brand-blue-dark: #163a82;
+    --brand-green: #2e7d32;
+    --brand-green-accent: #4caf50;
+    --brand-gold: #ffd700;
+    --brand-gold-hover: #ffb845;
+    --brand-maroon: #932c27;
+    --brand-navy: #22333b;
+    --brand-footer: #1f4ea7;
+    --brand-page-bg: #f4f6f9;
+    --brand-text: #333333;
+}

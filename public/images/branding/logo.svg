@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="School logo placeholder">
+  <rect width="120" height="120" rx="16" fill="#e2e8f0"/>
+  <circle cx="60" cy="48" r="22" fill="#94a3b8"/>
+  <rect x="28" y="78" width="64" height="10" rx="5" fill="#94a3b8"/>
+  <text x="60" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#64748b">LOGO</text>
+</svg>
