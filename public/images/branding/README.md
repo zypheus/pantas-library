@@ -9,7 +9,7 @@ Logos for the **staff portal, login, OPAC, and kiosk** — not the public PANTAS
 | `logo-compact.png` | Small marks, OPAC search |
 | `favicon.ico` / `favicon.png` | Browser tab icon |
 | `banner.jpg` | Staff catalog hero banner |
-| `partner-zendy.svg` | Optional OPAC partner tile |
+| `partner-zendy.png` | Optional OPAC partner tile |
 
 PNG, JPG, ICO, and SVG are all supported.
 

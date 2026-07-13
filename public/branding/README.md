@@ -108,4 +108,4 @@ After changing `.env`: `php artisan config:clear`
 
 After changing `branding.css`: hard-refresh the browser (Ctrl+F5). The app appends a file timestamp to the CSS URL so local edits show up without clearing cache.
 
-SVG placeholders ship with the repo so the app runs before you add real files.
+Default asset paths expect **PNG/JPG** filenames (see `config/branding.php`). SVG placeholders ship with the repo for local dev; on deploy, use the default names or override in `.env`.

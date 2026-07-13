@@ -107,7 +107,7 @@ function SidebarBrand() {
                         >
                             <div className="flex aspect-square size-9 shrink-0 items-center justify-center rounded-full bg-white p-0.5 shadow-md ring-1 ring-sidebar-primary/40">
                                 <img
-                                    src={assets.logo || '/images/branding/logo.svg'}
+                                    src={assets.logo || '/images/branding/logo.png'}
                                     alt={schoolName}
                                     className="size-full rounded-full object-contain"
                                 />

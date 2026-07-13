@@ -33,4 +33,4 @@ After uploading files and editing `.env` on the server:
 php artisan config:clear
 ```
 
-SVG placeholders in this folder are for development only. Replace them with your real PNG/JPG files on each deployment.
+SVG placeholders ship with the repo for development. On deploy, drop PNG/JPG files using the default names above (or override paths in `.env`).

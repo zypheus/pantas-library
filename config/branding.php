@@ -33,18 +33,17 @@ return [
     |
     */
     'assets' => [
-        'logo' => env('BRANDING_LOGO', 'images/branding/logo.svg'),
-        'logo_landscape' => env('BRANDING_LOGO_LANDSCAPE', 'images/branding/logo-landscape.svg'),
-        'logo_compact' => env('BRANDING_LOGO_COMPACT', 'images/branding/logo-compact.svg'),
-        'favicon' => env('BRANDING_FAVICON', 'images/branding/favicon.svg'),
-        'banner' => env('BRANDING_BANNER', 'images/branding/banner.svg'),
+        'logo' => env('BRANDING_LOGO', 'images/branding/logo.png'),
+        'logo_landscape' => env('BRANDING_LOGO_LANDSCAPE', 'images/branding/logo-landscape.png'),
+        'logo_compact' => env('BRANDING_LOGO_COMPACT', 'images/branding/logo-compact.png'),
+        'favicon' => env('BRANDING_FAVICON', 'images/branding/favicon.png'),
+        'banner' => env('BRANDING_BANNER', 'images/branding/banner.jpg'),
         'default_avatar' => env('BRANDING_DEFAULT_AVATAR', 'images/system/default-avatar.svg'),
         'default_book' => env('BRANDING_DEFAULT_BOOK', 'images/system/default-book.svg'),
-        'partner_zendy' => env('BRANDING_PARTNER_ZENDY_LOGO', 'images/branding/partner-zendy.svg'),
-        // Null when unset — Branding.php falls back to school logos (see resolveAsset).
-        'platform_logo' => env('BRANDING_PLATFORM_LOGO'),
-        'platform_logo_landscape' => env('BRANDING_PLATFORM_LOGO_LANDSCAPE'),
-        'platform_vendor_logo' => env('BRANDING_PLATFORM_VENDOR_LOGO'),
+        'partner_zendy' => env('BRANDING_PARTNER_ZENDY_LOGO', 'images/branding/partner-zendy.png'),
+        'platform_logo' => env('BRANDING_PLATFORM_LOGO', 'images/platform/logo.png'),
+        'platform_logo_landscape' => env('BRANDING_PLATFORM_LOGO_LANDSCAPE', 'images/platform/logo-landscape.png'),
+        'platform_vendor_logo' => env('BRANDING_PLATFORM_VENDOR_LOGO', 'images/platform/vendor-logo.png'),
     ],
 
     /*
