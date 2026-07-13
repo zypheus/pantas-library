@@ -37,7 +37,7 @@
   <header>
     <div class="header">
       <div class="logo-title">
-        <img src="{{ $brand['logo_url'] }}" alt="{{ $brand['library_name'] }}">
+        <img src="{{ $brand['logo_landscape_url'] }}" alt="{{ $brand['library_name'] }}">
         <div class="system-title">{{ $brand['system_name'] }}</div>
         <a href="{{ route('book.index') }}" class="home-button" hidden>Home</a>
       </div>

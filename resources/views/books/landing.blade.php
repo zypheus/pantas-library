@@ -19,7 +19,7 @@
         <header class="opac-search-header" role="banner">
             <div class="opac-search-header-inner">
                 <a href="{{ route('landing') }}" class="opac-search-brand text-decoration-none">
-                    <img class="opac-search-logo" src="{{ $brand['logo_compact_url'] }}" alt="{{ $brand['school_name'] }}">
+                    <img class="opac-search-logo" src="{{ $brand['logo_landscape_url'] }}" alt="{{ $brand['school_name'] }}">
                     <div class="opac-search-brand-text">
                         <span class="opac-search-kicker">Online Public Access Catalog</span>
                         <span class="opac-search-title">{{ $brand['school_name'] }}</span>
@@ -53,7 +53,7 @@
         <header class="opac-public-header opac-header-bar">
             <div class="logo opac-logo-wrap">
                 <a href="{{ route('landing') }}" class="text-decoration-none text-dark d-inline-flex align-items-center">
-                    <img src="{{ $brand['logo_url'] }}" alt="{{ $brand['library_name'] }}">
+                    <img src="{{ $brand['logo_landscape_url'] }}" alt="{{ $brand['library_name'] }}">
                 </a>
             </div>
             <nav class="opac-top-nav" aria-label="Quick links">
