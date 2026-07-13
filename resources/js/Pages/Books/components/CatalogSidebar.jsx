@@ -60,7 +60,7 @@ function exportHref(filters) {
 
 function SectionLabel({ children }) {
     return (
-        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-primary">
+        <p className="catalog-filter-label text-[10px] font-semibold uppercase tracking-[0.14em]">
             {children}
         </p>
     );

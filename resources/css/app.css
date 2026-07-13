@@ -342,6 +342,21 @@
         text-decoration: none !important;
     }
 
+    /* Main content — table text separate from sidebar/gate accent colors */
+    .admin-shell [data-slot="admin-main"] [data-slot="table-head"],
+    .admin-shell [data-slot="admin-main"] [data-slot="table-cell"] {
+        color: var(--brand-shell-text, var(--foreground)) !important;
+    }
+
+    .admin-shell [data-slot="admin-main"] [data-slot="button"][data-variant="outline"],
+    .admin-shell [data-slot="admin-main"] [data-slot="table"] a {
+        color: var(--brand-shell-action-text, var(--brand-shell-text, var(--foreground))) !important;
+    }
+
+    .admin-shell [data-slot="admin-main"] .catalog-filter-label {
+        color: var(--brand-shell-filter-label, var(--primary)) !important;
+    }
+
     .legacy-page-content {
         min-width: 0;
     }

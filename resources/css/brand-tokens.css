@@ -13,24 +13,24 @@
     --sidebar-ring: var(--brand-sidebar-highlight, var(--brand-primary, #ffd700));
 
     --background: var(--brand-shell-background, #ffffff);
-    --foreground: var(--brand-text-dark, #333333);
+    --foreground: var(--brand-shell-text, var(--brand-text-dark, #333333));
     --card: var(--brand-shell-card, #ffffff);
-    --card-foreground: var(--brand-text-dark, #333333);
+    --card-foreground: var(--brand-shell-text, var(--brand-text-dark, #333333));
     --popover: var(--brand-shell-card, #ffffff);
-    --popover-foreground: var(--brand-text-dark, #333333);
-    --primary: var(--brand-shell-primary, var(--brand-accent, #4caf50));
-    --primary-foreground: var(--brand-text-light, #ffffff);
+    --popover-foreground: var(--brand-shell-text, var(--brand-text-dark, #333333));
+    --primary: var(--brand-shell-button-bg, var(--brand-shell-primary, var(--brand-accent, #4caf50)));
+    --primary-foreground: var(--brand-shell-button-text, var(--brand-text-light, #ffffff));
     --secondary: var(--brand-shell-secondary, var(--brand-blue, #1f4ea7));
-    --secondary-foreground: var(--brand-text-light, #ffffff);
+    --secondary-foreground: var(--brand-shell-button-text, var(--brand-text-light, #ffffff));
     --muted: var(--brand-shell-muted, #f4f6f9);
-    --muted-foreground: #666666;
+    --muted-foreground: var(--brand-shell-muted-text, #64748b);
     --accent: var(--brand-shell-accent, var(--brand-primary, #ffd700));
-    --accent-foreground: var(--brand-text-dark, #333333);
+    --accent-foreground: var(--brand-shell-text, var(--brand-text-dark, #333333));
     --destructive: var(--brand-danger-bg, #932c27);
     --destructive-foreground: var(--brand-danger-text, #ffffff);
     --border: var(--brand-shell-border, #e5e7eb);
     --input: var(--brand-shell-border, #e5e7eb);
-    --ring: var(--brand-shell-primary, var(--brand-accent, #4caf50));
+    --ring: var(--brand-shell-button-bg, var(--brand-shell-primary, var(--brand-accent, #4caf50)));
 
     --chart-1: var(--brand-accent, #4caf50);
     --chart-2: var(--brand-blue, #1f4ea7);

@@ -44,6 +44,19 @@ BRANDING_CSS=branding/branding.css
 
 Hover is derived automatically from the active color — no separate variable needed.
 
+### Main content (catalog tables, cards)
+
+Separate from sidebar/gate colors — keeps table text readable on white backgrounds.
+
+| Variable | What you see |
+|----------|----------------|
+| `--brand-shell-text` | Table body text, titles, authors (defaults to `--brand-text-dark`) |
+| `--brand-shell-muted-text` | "Showing 2229 titles…", hints |
+| `--brand-shell-action-text` | View / Actions button labels in tables |
+| `--brand-shell-filter-label` | Catalog filter sidebar labels (can use `--brand-blue`) |
+| `--brand-shell-button-bg` | Filled buttons, Available badge, active pagination |
+| `--brand-shell-button-text` | Text on filled buttons and badges |
+
 ### Gate terminal (`/attendance`)
 
 | Variable | What you see |

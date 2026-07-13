@@ -62,9 +62,15 @@
   --brand-shell-card: #ffffff; /* Card/panel background (white boxes on the page) */
   --brand-shell-muted: #f4f6f9; /* Subtle gray areas (muted sections, design-system preview bg) */
   --brand-shell-border: #e5e7eb; /* Borders around cards, inputs, table cells */
-  --brand-shell-primary: var(--brand-accent); /* Green primary buttons in React UI (e.g. "Save") */
-  --brand-shell-secondary: var(--brand-blue); /* Blue secondary buttons in React UI */
-  --brand-shell-accent: var(--brand-primary); /* Gold highlight buttons / accent elements in React UI */
+  --brand-shell-text: var(--brand-text-dark); /* Catalog table text, card body copy */
+  --brand-shell-muted-text: #64748b; /* "Showing 2229 titles…", hints, summaries */
+  --brand-shell-action-text: var(--brand-text-dark); /* View / Actions outline buttons in tables */
+  --brand-shell-filter-label: var(--brand-blue); /* Catalog filter sidebar labels (can be yellow) */
+  --brand-shell-button-bg: var(--brand-accent); /* Filled buttons, active pagination, Available badge */
+  --brand-shell-button-text: var(--brand-text-light); /* Label on filled buttons and badges */
+  --brand-shell-primary: var(--brand-shell-button-bg); /* shadcn primary (buttons/badges) */
+  --brand-shell-secondary: var(--brand-blue); /* Secondary filled buttons */
+  --brand-shell-accent: var(--brand-primary); /* Highlight chips / accents in main area */
 
   /* --- Legacy Blade pages (OPAC, kiosk, attendance, public forms) --- */
   --brand-page-bg: #ffffff; /* Full-page background on older Blade screens */
@@ -126,9 +132,18 @@
   --sidebar-accent-foreground: var(--brand-sidebar-active-text);
   --sidebar-border: var(--brand-sidebar-border);
   --sidebar-ring: var(--brand-sidebar-highlight);
-  --primary: var(--brand-shell-primary);
+  --foreground: var(--brand-shell-text);
+  --card-foreground: var(--brand-shell-text);
+  --popover-foreground: var(--brand-shell-text);
+  --muted-foreground: var(--brand-shell-muted-text);
+  --primary: var(--brand-shell-button-bg);
+  --primary-foreground: var(--brand-shell-button-text);
   --secondary: var(--brand-shell-secondary);
+  --secondary-foreground: var(--brand-shell-button-text);
   --accent: var(--brand-shell-accent);
+  --accent-foreground: var(--brand-shell-text);
   --background: var(--brand-shell-background);
+  --card: var(--brand-shell-card);
   --border: var(--brand-shell-border);
+  --ring: var(--brand-shell-button-bg);
 }
