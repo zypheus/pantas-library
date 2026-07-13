@@ -64,7 +64,8 @@ Separate from sidebar/gate colors — keeps table text readable on white backgro
 | `--brand-gate-sidebar-bg` | Left student panel (defaults to `--brand-primary`) |
 | `--brand-gate-title-text` | Header "PANTAS" title color |
 | `--brand-gate-footer-bg` | Bottom footer bar |
-| `--brand-gate-highlight` | Clock, scan line, video border |
+| `--brand-gate-highlight` | Scan line, video border |
+| `--brand-gate-clock-text` | Live clock on gate sidebar (must contrast with sidebar bg) |
 | `--brand-gate-modal-button-bg` | Section picker buttons |
 
 Gate terminal uses **`--brand-primary`**, not `--brand-accent`. Staff sidebar uses `--brand-accent`.

@@ -129,7 +129,7 @@ body {
     .time {
       font-size: 28px;
       font-weight: bold;
-      color: var(--brand-gate-highlight, var(--brand-primary, #facc15));
+      color: var(--brand-gate-clock-text, var(--brand-gate-highlight, #facc15));
       margin-bottom: 20px;
     }
 

@@ -46,8 +46,9 @@
   --brand-gate-footer-bg: var(--brand-primary); /* Bottom footer bar on gate terminal */
   --brand-gate-button-bg: var(--brand-primary); /* Home button on gate terminal */
   --brand-gate-button-hover-bg: var(--brand-green-dark); /* Home button hover */
-  --brand-gate-highlight: var(--brand-primary); /* Clock, scan line, video border */
-  --brand-gate-panel-text: var(--brand-text-light); /* Text on the colored gate sidebar */
+  --brand-gate-highlight: var(--brand-primary); /* Scan line, video border (not the clock) */
+  --brand-gate-clock-text: var(--brand-blue); /* Live clock on gate sidebar — must contrast with sidebar bg */
+  --brand-gate-panel-text: var(--brand-text-light); /* Date and labels on the colored gate sidebar */
   --brand-gate-modal-heading: var(--brand-primary); /* Section picker modal title */
   --brand-gate-modal-button-bg: var(--brand-primary); /* Section picker buttons */
   --brand-gate-modal-button-hover: var(--brand-accent); /* Section picker button hover */
