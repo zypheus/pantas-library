@@ -179,13 +179,13 @@
 }
 
 .auth-page__btn--primary {
-    background: var(--brand-button-bg, #1f4ea7);
-    color: #fff;
+    background: var(--brand-auth-signin-bg, var(--brand-accent, #4caf50));
+    color: var(--brand-auth-signin-text, var(--brand-text-light, #ffffff));
 }
 
 .auth-page__btn--primary:hover {
-    background: var(--brand-button-hover-bg, #2e7d32);
-    color: #fff;
+    background: var(--brand-auth-signin-hover-bg, var(--brand-green-dark, #2e7d32));
+    color: var(--brand-auth-signin-text, var(--brand-text-light, #ffffff));
 }
 
 .auth-page__btn--outline {

@@ -119,7 +119,7 @@ function SidebarBrand() {
                                 <span className="truncate text-[11px] text-sidebar-foreground/70">
                                     {libraryName}
                                 </span>
-                                <span className="truncate text-[10px] font-medium uppercase tracking-[0.12em] text-sidebar-primary/90">
+                                <span className="sidebar-portal-text truncate text-[10px] font-medium uppercase tracking-[0.12em]">
                                     {portalSubtitle}
                                 </span>
                             </div>
@@ -132,8 +132,10 @@ function SidebarBrand() {
 }
 
 function SidebarUserPanel() {
-    const { auth } = useShellProps();
+    const { auth, branding } = useShellProps();
     const user = auth?.user;
+    const systemName = branding?.systemName ?? 'PANTAS';
+    const schoolName = branding?.schoolName ?? '';
 
     if (!user) {
         return null;
@@ -160,7 +162,7 @@ function SidebarUserPanel() {
                     <div className="mt-1 flex items-center gap-1.5">
                         <Badge
                             variant="outline"
-                            className="h-5 border-sidebar-primary/40 bg-sidebar-primary/10 px-1.5 text-[10px] font-semibold uppercase tracking-wide text-sidebar-primary"
+                            className="sidebar-role-badge h-5 px-1.5 text-[10px] font-semibold uppercase tracking-wide"
                         >
                             {roleLabel}
                         </Badge>
@@ -168,7 +170,8 @@ function SidebarUserPanel() {
                 </div>
             </a>
             <p className="px-2 text-center text-[10px] text-sidebar-foreground/50 group-data-[collapsible=icon]:hidden">
-                Pantas © {new Date().getFullYear()} · University of Southern Mindanao
+                {systemName} © {new Date().getFullYear()}
+                {schoolName ? ` · ${schoolName}` : ''}
             </p>
         </SidebarFooter>
     );

@@ -1,79 +1,134 @@
 /*
- * Brand font files (bundled under public/vendor/fontsource).
- * To use another font: change --brand-font-family below and swap these @imports.
+ * =============================================================================
+ * SCHOOL BRANDING — edit this file only for colors & fonts
+ * =============================================================================
+ *
+ * Copy to branding.css (gitignored) on each deployment:
+ *   cp public/branding/branding.css.example public/branding/branding.css
+ *
+ * Point .env at it:
+ *   BRANDING_CSS=branding/branding.css
  */
 @import url('../vendor/fontsource/poppins/latin-400.css');
 @import url('../vendor/fontsource/poppins/latin-600.css');
 @import url('../vendor/fontsource/poppins/latin-700.css');
 
 :root {
-  /*
-   * Typography (change family name to match @imports above)
-   */
-  --brand-font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
-  --brand-font-family-heading: var(--brand-font-family);
-  --brand-font-family-mono: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', Consolas, monospace;
+  /* --- Typography --- */
+  --brand-font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif; /* Body text, forms, tables, buttons */
+  --brand-font-family-heading: var(--brand-font-family); /* Page titles, headings, school name on OPAC */
+  --brand-font-family-mono: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', Consolas, monospace; /* Barcodes, code */
 
-  /*
-   * Primary brand tokens (edit these per school)
-   */
-  --brand-primary: #ffd700;
-  --brand-accent: #4caf50;
-  --brand-text-dark: #333;
-  --brand-text-light: #fff;
+  /* --- Core palette (change these first — many lines below copy from here) --- */
+  --brand-primary: #ffd700; /* Main school color: gate terminal panel, sidebar "STAFF PORTAL" text, active tab bar */
+  --brand-accent: #4caf50; /* Secondary color: staff sidebar background, Bootstrap success */
+  --brand-blue: #1f4ea7; /* Main blue: active sidebar tab, primary buttons, links, nav items */
+  --brand-blue-dark: #163a82; /* Darker blue: chart accents (rarely seen directly) */
+  --brand-green-dark: #2e7d32; /* Dark green: button hover, nav hover text, sidebar dividers */
+  --brand-text-dark: #333333; /* Dark text on light backgrounds (page body, cards, forms) */
+  --brand-text-light: #ffffff; /* White text on colored buttons, sidebar menu labels */
 
-  /*
-   * App-wide branding tokens (staff + kiosk)
-   */
-  --brand-page-bg: #ffffff;
-  --brand-school-name-color: red;
+  /* --- Staff sidebar (left menu) --- */
+  --brand-sidebar-bg: var(--brand-accent); /* Entire sidebar background color (the big green area) */
+  --brand-sidebar-text: var(--brand-text-light); /* Menu item labels, icons, user name in sidebar */
+  --brand-sidebar-portal-text: var(--brand-text-light); /* "STAFF PORTAL" subtitle under school name */
+  --brand-sidebar-role-text: var(--brand-text-light); /* Administrator / Staff badge text */
+  --brand-sidebar-highlight: var(--brand-primary); /* Yellow left stripe on active tab */
+  --brand-sidebar-highlight-text: var(--brand-text-dark); /* Text on gold/yellow elements (if any) */
+  --brand-sidebar-active-bg: var(--brand-blue); /* Background fill of the currently selected menu item (blue) */
+  --brand-sidebar-active-text: var(--brand-text-light); /* Text/icon color on the active menu item */
+  --brand-sidebar-border: var(--brand-green-dark); /* Horizontal lines between sidebar sections (Menu, footer) */
+  /* --brand-sidebar-bg-dark: #1e4620; */ /* Optional: sidebar background in dark mode (uncomment to override) */
 
-  --brand-nav-link: #1f4ea7;
-  --brand-nav-link-active: #ffffff;
-  --brand-nav-hover-bg: #ffffff;
-  --brand-nav-hover-text: #2e7d32;
+  /* --- Gate terminal (/attendance) — uses brand-primary, not brand-accent --- */
+  --brand-gate-sidebar-bg: var(--brand-primary); /* Left student panel background on gate terminal */
+  --brand-gate-title-text: var(--brand-primary); /* "PANTAS" title text in header/footer */
+  --brand-gate-footer-bg: var(--brand-primary); /* Bottom footer bar on gate terminal */
+  --brand-gate-button-bg: var(--brand-primary); /* Home button on gate terminal */
+  --brand-gate-button-hover-bg: var(--brand-green-dark); /* Home button hover */
+  --brand-gate-highlight: var(--brand-primary); /* Clock, scan line, video border */
+  --brand-gate-panel-text: var(--brand-text-light); /* Text on the colored gate sidebar */
+  --brand-gate-modal-heading: var(--brand-primary); /* Section picker modal title */
+  --brand-gate-modal-button-bg: var(--brand-primary); /* Section picker buttons */
+  --brand-gate-modal-button-hover: var(--brand-accent); /* Section picker button hover */
 
-  --brand-logout-bg: #1f4ea7;
-  --brand-logout-text: #ffffff;
+  /* --- Staff sign-in (/login) --- */
+  --brand-auth-signin-bg: var(--brand-accent); /* Sign in button background */
+  --brand-auth-signin-hover-bg: var(--brand-green-dark); /* Sign in button hover */
+  --brand-auth-signin-text: var(--brand-text-light); /* Sign in button label */
 
-  --brand-button-bg: #1f4ea7;
-  --brand-button-text: #ffffff;
-  --brand-button-hover-bg: #2e7d32;
-  --brand-button-hover-text: #ffffff;
+  /* --- React admin shell (main content area next to sidebar) --- */
+  --brand-shell-background: #ffffff; /* Page background behind tables and cards */
+  --brand-shell-card: #ffffff; /* Card/panel background (white boxes on the page) */
+  --brand-shell-muted: #f4f6f9; /* Subtle gray areas (muted sections, design-system preview bg) */
+  --brand-shell-border: #e5e7eb; /* Borders around cards, inputs, table cells */
+  --brand-shell-primary: var(--brand-accent); /* Green primary buttons in React UI (e.g. "Save") */
+  --brand-shell-secondary: var(--brand-blue); /* Blue secondary buttons in React UI */
+  --brand-shell-accent: var(--brand-primary); /* Gold highlight buttons / accent elements in React UI */
 
-  --brand-danger-bg: #1f4ea7;
-  --brand-danger-hover-bg: #2e7d32;
-  --brand-danger-text: #ffffff;
+  /* --- Legacy Blade pages (OPAC, kiosk, attendance, public forms) --- */
+  --brand-page-bg: #ffffff; /* Full-page background on older Blade screens */
+  --brand-school-name-color: var(--brand-blue); /* School name text color on OPAC and landing pages */
 
-  --brand-success-bg: #1f4ea7;
-  --brand-success-hover-bg: #2e7d32;
-  --brand-success-text: #ffffff;
+  --brand-nav-link: var(--brand-blue); /* Top navigation link color on legacy pages */
+  --brand-nav-link-active: var(--brand-text-light); /* Text on a selected/active nav link */
+  --brand-nav-hover-bg: var(--brand-text-light); /* Background when hovering a nav link */
+  --brand-nav-hover-text: var(--brand-green-dark); /* Text color when hovering a nav link */
 
-  --brand-footer-bg: #1f4ea7;
+  --brand-logout-bg: var(--brand-blue); /* Logout button background */
+  --brand-logout-text: var(--brand-text-light); /* Logout button text */
 
-  --brand-kiosk-gradient-from: #1f4ea7;
-  --brand-kiosk-gradient-to: #2e7d32;
+  --brand-button-bg: var(--brand-blue); /* Default button background (forms, tables, auth login) */
+  --brand-button-text: var(--brand-text-light); /* Default button label color */
+  --brand-button-hover-bg: var(--brand-green-dark); /* Button background when mouse hovers */
+  --brand-button-hover-text: var(--brand-text-light); /* Button label when mouse hovers */
 
-  /*
-   * Backwards-compatible vars used by your existing landing `style.css`
-   */
-  --primary-yellow: var(--brand-primary);
-  --secondary-green: var(--brand-accent);
-  --text-dark: var(--brand-text-dark);
-  --text-light: var(--brand-text-light);
+  --brand-danger-bg: var(--brand-blue); /* Delete/warning button background (legacy pages) */
+  --brand-danger-hover-bg: var(--brand-green-dark); /* Delete/warning button on hover */
+  --brand-danger-text: var(--brand-text-light); /* Delete/warning button text */
+
+  --brand-success-bg: var(--brand-blue); /* Success/confirm button background (legacy pages) */
+  --brand-success-hover-bg: var(--brand-green-dark); /* Success button on hover */
+  --brand-success-text: var(--brand-text-light); /* Success button text */
+
+  --brand-footer-bg: var(--brand-blue); /* Bottom footer bar on legacy staff pages */
+
+  --brand-kiosk-gradient-from: var(--brand-blue); /* Kiosk screen gradient — top/left color */
+  --brand-kiosk-gradient-to: var(--brand-green-dark); /* Kiosk screen gradient — bottom/right color */
+
+  /* --- Aliases for older style.css (usually leave as-is) --- */
+  --primary-yellow: var(--brand-primary); /* Maps old --primary-yellow name to --brand-primary */
+  --secondary-green: var(--brand-accent); /* Maps old --secondary-green name to --brand-accent */
+  --text-dark: var(--brand-text-dark); /* Maps old --text-dark name to --brand-text-dark */
+  --text-light: var(--brand-text-light); /* Maps old --text-light name to --brand-text-light */
+}
+
+/* Bootstrap components (.btn-primary, .btn-success, links) */
+:root {
+  --bs-primary: var(--brand-primary); /* Bootstrap "primary" button/badge color (gold) */
+  --bs-primary-rgb: 255, 215, 0; /* RGB version of primary — update if you change --brand-primary hex */
+  --bs-success: var(--brand-accent); /* Bootstrap "success" button/badge color (green) */
+  --bs-success-rgb: 76, 175, 80; /* RGB version of success — update if you change --brand-accent hex */
+  --bs-link-color: var(--brand-accent); /* Clickable link color on Bootstrap pages */
+  --bs-link-hover-color: var(--brand-accent); /* Link color when hovered */
 }
 
 /*
- * Bootstrap theme variables (affects `.btn-primary`, etc.)
- * Put this AFTER bootstrap.min.css in your layouts.
+ * Shell sync — applies your palette to the React sidebar/admin UI.
+ * Loaded after Vite; you normally do not need to edit this block.
  */
 :root {
-  --bs-primary: var(--brand-primary);
-  --bs-primary-rgb: 255, 215, 0;
-
-  --bs-success: var(--brand-accent);
-  --bs-success-rgb: 76, 175, 80;
-
-  --bs-link-color: var(--brand-accent);
-  --bs-link-hover-color: var(--brand-accent);
+  --sidebar: var(--brand-sidebar-bg);
+  --sidebar-foreground: var(--brand-sidebar-text);
+  --sidebar-primary: var(--brand-sidebar-highlight);
+  --sidebar-primary-foreground: var(--brand-sidebar-highlight-text);
+  --sidebar-accent: var(--brand-sidebar-active-bg);
+  --sidebar-accent-foreground: var(--brand-sidebar-active-text);
+  --sidebar-border: var(--brand-sidebar-border);
+  --sidebar-ring: var(--brand-sidebar-highlight);
+  --primary: var(--brand-shell-primary);
+  --secondary: var(--brand-shell-secondary);
+  --accent: var(--brand-shell-accent);
+  --background: var(--brand-shell-background);
+  --border: var(--brand-shell-border);
 }

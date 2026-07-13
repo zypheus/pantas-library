@@ -2,10 +2,10 @@ import { Head } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 
 const swatches = [
-    { name: 'Brand blue', token: '--brand-blue', role: 'Primary actions' },
-    { name: 'Brand green', token: '--brand-green', role: 'Secondary / success' },
-    { name: 'Brand gold', token: '--brand-gold', role: 'Accent highlights' },
-    { name: 'Brand maroon', token: '--brand-maroon', role: 'Destructive emphasis' },
+    { name: 'Primary (gold)', token: '--brand-primary', role: 'Highlights, sidebar bar' },
+    { name: 'Accent (green)', token: '--brand-accent', role: 'Sidebar background' },
+    { name: 'Blue', token: '--brand-blue', role: 'Active nav, buttons' },
+    { name: 'Green dark', token: '--brand-green-dark', role: 'Hovers, borders' },
 ];
 
 export default function DesignSystem({ branding }) {
@@ -23,8 +23,8 @@ export default function DesignSystem({ branding }) {
                         </p>
                         <h1 className="text-3xl font-semibold">PANTAS shadcn theme</h1>
                         <p className="max-w-2xl text-primary-foreground/90">
-                            Colors come from <code className="rounded bg-primary-foreground/10 px-1">public/branding/branding.css</code>{' '}
-                            and <code className="rounded bg-primary-foreground/10 px-1">resources/css/brand-tokens.css</code>.
+                            All colors are edited in{' '}
+                            <code className="rounded bg-primary-foreground/10 px-1">public/branding/branding.css</code>.
                         </p>
                     </div>
                 </header>

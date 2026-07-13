@@ -9,14 +9,13 @@
 
     {{-- Legacy page styles first; shell theme loads last so sidebar tokens win --}}
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset(config('branding.css_path')) }}">
     <link rel="stylesheet" href="{{ asset('css/site-responsive.css') }}">
 
     @stack('styles')
     @yield('styles')
 
     @vite(['resources/css/app.css', 'resources/js/admin-shell.jsx'])
-    <link rel="stylesheet" href="{{ asset('css/brand-typography.css') }}">
+    @include('partials.branding-styles')
 </head>
 <body class="theme font-sans antialiased admin-page">
     <script type="application/json" id="admin-shell-props">
