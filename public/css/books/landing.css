@@ -49,11 +49,12 @@ body,
 }
 
 .opac-search-logo {
+    width: 52px;
     height: 52px;
-    width: auto;
-    max-width: min(220px, 42vw);
     flex-shrink: 0;
-    object-fit: contain;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    object-fit: cover;
 }
 
 .opac-search-title {

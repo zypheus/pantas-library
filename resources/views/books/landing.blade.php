@@ -19,7 +19,7 @@
         <header class="opac-search-header" role="banner">
             <div class="opac-search-header-inner">
                 <a href="{{ route('landing') }}" class="opac-search-brand text-decoration-none">
-                    <img class="opac-search-logo" src="{{ $brand['logo_landscape_url'] }}" alt="{{ $brand['school_name'] }}">
+                    <img class="opac-search-logo" src="{{ $brand['logo_compact_url'] }}" alt="{{ $brand['school_name'] }}">
                     <div class="opac-search-brand-text">
                         <span class="opac-search-kicker">Online Public Access Catalog</span>
                         <span class="opac-search-title">{{ $brand['school_name'] }}</span>
