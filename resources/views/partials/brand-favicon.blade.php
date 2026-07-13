@@ -1,1 +1,1 @@
-<link rel="icon" type="image/svg+xml" href="{{ $brand['favicon_url'] }}">
+<link rel="icon" type="{{ $brand['favicon_mime'] ?? 'image/x-icon' }}" href="{{ $brand['favicon_url'] }}">

@@ -1,22 +1,28 @@
 # School branding assets
 
-Replace these files when deploying for a new institution. Paths are configured in `config/branding.php` and overridable via `.env`.
+Logos for the **staff portal, login, OPAC, and kiosk** — not the public PANTAS marketing home page.
 
 | File | Used for |
 |------|----------|
-| `logo.svg` / `logo.png` | Sidebar, auth login, OPAC header |
-| `logo-landscape.svg` | Wide header layouts |
-| `logo-compact.svg` | Small marks, OPAC search |
-| `favicon.svg` / `favicon.ico` | Browser tab icon |
-| `banner.svg` / `banner.jpg` | Staff catalog hero banner |
+| `logo.png` | Sidebar, auth login, OPAC header |
+| `logo-landscape.png` | Wide header layouts |
+| `logo-compact.png` | Small marks, OPAC search |
+| `favicon.ico` / `favicon.png` | Browser tab icon |
+| `banner.jpg` | Staff catalog hero banner |
 | `partner-zendy.svg` | Optional OPAC partner tile |
 
-**Colors** are not stored here — edit `public/branding/branding.css` (copy from `branding.css.example`).
+PNG, JPG, ICO, and SVG are all supported.
 
-**Quick setup for a new school:**
+**Platform home page (`/`)** uses separate files in `public/images/platform/` — see `public/images/platform/README.md`.
 
-1. `cp public/branding/branding.css.example public/branding/branding.css` and edit colors/fonts
-2. Drop your logo files here (same filenames, or set `BRANDING_LOGO=images/branding/my-logo.png` in `.env`)
-3. Set `BRANDING_SCHOOL_NAME`, `BRANDING_LIBRARY_NAME`, `APP_NAME` in `.env`
+## `.env`
 
-SVG placeholders ship with the repo so the app works before you add real assets.
+```env
+BRANDING_LOGO=images/branding/logo.png
+BRANDING_LOGO_LANDSCAPE=images/branding/logo-landscape.png
+BRANDING_LOGO_COMPACT=images/branding/logo-compact.png
+BRANDING_FAVICON=images/branding/favicon.ico
+BRANDING_BANNER=images/branding/banner.jpg
+```
+
+**Colors** are not stored here — edit `public/branding/branding.css`.

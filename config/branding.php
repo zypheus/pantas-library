@@ -41,9 +41,10 @@ return [
         'default_avatar' => env('BRANDING_DEFAULT_AVATAR', 'images/system/default-avatar.svg'),
         'default_book' => env('BRANDING_DEFAULT_BOOK', 'images/system/default-book.svg'),
         'partner_zendy' => env('BRANDING_PARTNER_ZENDY_LOGO', 'images/branding/partner-zendy.svg'),
-        'platform_logo' => env('BRANDING_PLATFORM_LOGO', 'images/platform/logo.svg'),
-        'platform_logo_landscape' => env('BRANDING_PLATFORM_LOGO_LANDSCAPE', 'images/platform/logo-landscape.svg'),
-        'platform_vendor_logo' => env('BRANDING_PLATFORM_VENDOR_LOGO', 'images/platform/vendor-logo.svg'),
+        // Null when unset — Branding.php falls back to school logos (see resolveAsset).
+        'platform_logo' => env('BRANDING_PLATFORM_LOGO'),
+        'platform_logo_landscape' => env('BRANDING_PLATFORM_LOGO_LANDSCAPE'),
+        'platform_vendor_logo' => env('BRANDING_PLATFORM_VENDOR_LOGO'),
     ],
 
     /*

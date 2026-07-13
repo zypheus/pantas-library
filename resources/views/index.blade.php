@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{{ $brand['favicon_url'] }}">
+    <link rel="icon" type="{{ $brand['favicon_mime'] ?? 'image/x-icon' }}" href="{{ $brand['favicon_url'] }}">
     <title>PANTAS | Platform</title>
     <link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>

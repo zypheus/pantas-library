@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/x-icon" href="{{ $brand['favicon_url'] }}">
+    <link rel="icon" type="{{ $brand['favicon_mime'] ?? 'image/x-icon' }}" href="{{ $brand['favicon_url'] }}">
     <title>@yield('title', '📚 Book Kiosk')</title>
 
     {{-- Legacy page styles first; shell theme loads last so sidebar tokens win --}}

@@ -80,21 +80,28 @@ All paths live under `public/images/`:
 
 | Folder | Purpose |
 |--------|---------|
-| `images/branding/` | **Per-school** — logo, favicon, banner (replace on each deploy) |
+| `images/branding/` | **School** — staff sidebar, login, OPAC, favicon, banner |
+| `images/platform/` | **Platform home** (`/`) — PANTAS marketing logos (set `BRANDING_PLATFORM_*` in `.env`) |
 | `images/system/` | App defaults — placeholder book cover, avatar |
-| `images/platform/` | PANTAS marketing home page logos |
 
-See `public/images/branding/README.md` for filenames.
+See `public/images/branding/README.md` and `public/images/platform/README.md`.
 
-## Display names (`.env`)
+## Display names & logos (`.env`)
+
+Use **two logo sets** when the public home page should show PANTAS marketing art and the staff app should show the school mark:
 
 ```env
-BRANDING_SCHOOL_NAME="Your University"
-BRANDING_LIBRARY_NAME="University Library"
-BRANDING_SYSTEM_NAME="PANTAS"
-BRANDING_PORTAL_SUBTITLE="Staff portal"
+# School
+BRANDING_SCHOOL_NAME="Misamis Oriental State University - Main"
+BRANDING_LIBRARY_NAME="MOIST Library"
 BRANDING_LOGO=images/branding/logo.png
+BRANDING_LOGO_LANDSCAPE=images/branding/logo-landscape.png
 BRANDING_FAVICON=images/branding/favicon.ico
+
+# Platform home page (/)
+BRANDING_PLATFORM_LOGO=images/platform/logo.png
+BRANDING_PLATFORM_LOGO_LANDSCAPE=images/platform/logo-landscape.png
+BRANDING_PLATFORM_VENDOR_LOGO=images/platform/vendor-logo.png
 ```
 
 After changing `.env`: `php artisan config:clear`

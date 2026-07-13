@@ -12,17 +12,39 @@ class Branding
      */
     public static function url(string $key): string
     {
+        return self::assetUrl($key);
+    }
+
+    /**
+     * Resolve asset path; when missing, use another branding key (e.g. platform → school logo).
+     *
+     * @param  list<string>  $fallbackKeys
+     */
+    public static function assetUrl(string $key, string|array|null $fallbackKeys = null): string
+    {
         $path = config("branding.assets.{$key}");
 
-        if (! is_string($path) || $path === '') {
-            return '';
-        }
-
-        if (PublicAssetPath::resolve($path)) {
+        if (is_string($path) && $path !== '' && PublicAssetPath::resolve($path) !== null) {
             return asset($path);
         }
 
-        return asset($path);
+        foreach ((array) ($fallbackKeys ?? []) as $fallbackKey) {
+            $fallbackPath = config("branding.assets.{$fallbackKey}");
+
+            if (! is_string($fallbackPath) || $fallbackPath === '') {
+                continue;
+            }
+
+            if (PublicAssetPath::resolve($fallbackPath) !== null) {
+                return asset($fallbackPath);
+            }
+        }
+
+        if (is_string($path) && $path !== '') {
+            return asset($path);
+        }
+
+        return '';
     }
 
     public static function has(string $key): bool
@@ -30,6 +52,25 @@ class Branding
         $path = config("branding.assets.{$key}");
 
         return is_string($path) && $path !== '' && PublicAssetPath::resolve($path) !== null;
+    }
+
+    public static function faviconMime(): string
+    {
+        $path = config('branding.assets.favicon', '');
+
+        if (! is_string($path) || $path === '') {
+            return 'image/x-icon';
+        }
+
+        return match (strtolower(pathinfo($path, PATHINFO_EXTENSION))) {
+            'ico' => 'image/x-icon',
+            'png' => 'image/png',
+            'jpg', 'jpeg' => 'image/jpeg',
+            'gif' => 'image/gif',
+            'webp' => 'image/webp',
+            'svg' => 'image/svg+xml',
+            default => 'image/x-icon',
+        };
     }
 
     /**
@@ -47,13 +88,14 @@ class Branding
             'logo_landscape_url' => self::url('logo_landscape'),
             'logo_compact_url' => self::url('logo_compact'),
             'favicon_url' => self::url('favicon'),
+            'favicon_mime' => self::faviconMime(),
             'banner_url' => self::url('banner'),
             'default_avatar_url' => self::url('default_avatar'),
             'default_book_url' => self::url('default_book'),
             'partner_zendy_url' => self::url('partner_zendy'),
-            'platform_logo_url' => self::url('platform_logo'),
-            'platform_logo_landscape_url' => self::url('platform_logo_landscape'),
-            'platform_vendor_logo_url' => self::url('platform_vendor_logo'),
+            'platform_logo_url' => self::assetUrl('platform_logo', ['logo', 'logo_landscape']),
+            'platform_logo_landscape_url' => self::assetUrl('platform_logo_landscape', ['logo_landscape', 'logo']),
+            'platform_vendor_logo_url' => self::assetUrl('platform_vendor_logo', ['logo_landscape', 'logo']),
             'school_home_url' => config('branding.links.school_home'),
             'zendy_url' => config('branding.links.zendy'),
         ];
