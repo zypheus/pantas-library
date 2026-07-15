@@ -23,7 +23,7 @@
         <hr class="user-menu-dropdown__divider">
         <form action="{{ route('logout') }}" method="POST" class="mb-0">
             @csrf
-            <button type="submit" class="user-menu-dropdown__item user-menu-dropdown__item--danger">Logout</button>
+            <button type="submit" class="user-menu-dropdown__item user-menu-dropdown__item--primary">Logout</button>
         </form>
     </div>
 </div>

@@ -67,12 +67,22 @@
   --brand-shell-muted-text: #64748b; /* "Showing 2229 titles…", hints, summaries */
   --brand-shell-action-text: var(--brand-text-dark); /* View / Actions outline buttons in tables */
   --brand-shell-filter-label: var(--brand-blue); /* Catalog filter sidebar labels (can be yellow) */
-  --brand-shell-button-bg: var(--brand-accent); /* Filled primary buttons — MAIN CONTENT ONLY (not sidebar active) */
+  --brand-shell-button-bg: var(--brand-sidebar-bg); /* Primary filled buttons (= sidebar background) — MAIN CONTENT ONLY */
   --brand-shell-button-text: var(--brand-text-light); /* Label on filled primary buttons and badges */
   --brand-shell-primary: var(--brand-shell-button-bg); /* Alias of shell button bg */
   --brand-shell-secondary: #64748b; /* Secondary filled buttons — independent of sidebar / --brand-blue */
   --brand-shell-secondary-text: var(--brand-text-light); /* Text on secondary filled buttons */
   --brand-shell-accent: var(--brand-primary); /* Highlight chips / accents in main area */
+
+  /* --- Fixed semantic status colors (NEVER reuse school brand greens/reds) --- */
+  --brand-status-available: #16a34a; /* Available filter/badge — fixed green */
+  --brand-status-available-text: #ffffff;
+  --brand-status-borrowed: #dc2626; /* Borrowed filter/badge — fixed red */
+  --brand-status-borrowed-text: #ffffff;
+  --brand-status-success: #16a34a; /* Import / positive actions — fixed green */
+  --brand-status-success-text: #ffffff;
+  --brand-status-danger: #dc2626; /* Trash, export, delete actions — fixed red */
+  --brand-status-danger-text: #ffffff;
 
   /* --- Legacy Blade pages (OPAC, kiosk, attendance, public forms) --- */
   --brand-page-bg: #ffffff; /* Full-page background on older Blade screens */
@@ -83,8 +93,8 @@
   --brand-nav-hover-bg: var(--brand-text-light); /* Background when hovering a nav link */
   --brand-nav-hover-text: var(--brand-green-dark); /* Text color when hovering a nav link */
 
-  --brand-logout-bg: var(--brand-blue); /* Logout button background */
-  --brand-logout-text: var(--brand-text-light); /* Logout button text */
+  --brand-logout-bg: var(--brand-shell-button-bg); /* Logout buttons — primary (same as sidebar) */
+  --brand-logout-text: var(--brand-shell-button-text); /* Logout button text */
 
   --brand-button-bg: var(--brand-blue); /* Default button background (forms, tables, auth login) */
   --brand-button-text: var(--brand-text-light); /* Default button label color */
@@ -148,4 +158,12 @@
   --card: var(--brand-shell-card);
   --border: var(--brand-shell-border);
   --ring: var(--brand-shell-button-bg);
+  --status-available: var(--brand-status-available);
+  --status-available-foreground: var(--brand-status-available-text);
+  --status-borrowed: var(--brand-status-borrowed);
+  --status-borrowed-foreground: var(--brand-status-borrowed-text);
+  --status-success: var(--brand-status-success);
+  --status-success-foreground: var(--brand-status-success-text);
+  --status-danger: var(--brand-status-danger);
+  --status-danger-foreground: var(--brand-status-danger-text);
 }

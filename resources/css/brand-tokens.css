@@ -37,6 +37,16 @@
     --chart-3: var(--brand-primary, #ffd700);
     --chart-4: var(--brand-green-dark, #2e7d32);
     --chart-5: var(--brand-blue-dark, #163a82);
+
+    /* Fixed semantic colors — independent of school branding */
+    --status-available: var(--brand-status-available, #16a34a);
+    --status-available-foreground: var(--brand-status-available-text, #ffffff);
+    --status-borrowed: var(--brand-status-borrowed, #dc2626);
+    --status-borrowed-foreground: var(--brand-status-borrowed-text, #ffffff);
+    --status-success: var(--brand-status-success, #16a34a);
+    --status-success-foreground: var(--brand-status-success-text, #ffffff);
+    --status-danger: var(--brand-status-danger, #dc2626);
+    --status-danger-foreground: var(--brand-status-danger-text, #ffffff);
 }
 
 .dark {

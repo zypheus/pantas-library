@@ -90,7 +90,7 @@ function AvailabilityBadge({ availability }) {
     const isAvailable = availability === 'Available';
 
     return (
-        <Badge variant={isAvailable ? 'default' : 'destructive'} className="font-normal">
+        <Badge variant={isAvailable ? 'available' : 'borrowed'} className="font-normal">
             {availability}
         </Badge>
     );

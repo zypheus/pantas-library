@@ -89,15 +89,7 @@ export function CatalogFilterSidebar({ programs, filters, hasActiveQuery }) {
                 <Button
                     type="button"
                     className="w-full"
-                    variant={
-                        filters.show_all &&
-                        !filters.search &&
-                        !filters.program &&
-                        !filters.year1 &&
-                        !filters.status
-                            ? 'default'
-                            : 'outline'
-                    }
+                    variant="default"
                     onClick={() => visitCatalog(filters, { show_all: 1, page: undefined })}
                 >
                     Show all books
@@ -177,7 +169,7 @@ export function CatalogFilterSidebar({ programs, filters, hasActiveQuery }) {
                         />
                     ) : null}
 
-                    <Button type="submit" className="w-full">
+                    <Button type="submit" className="w-full" variant="default">
                         Search / Apply filters
                     </Button>
 
@@ -200,8 +192,12 @@ export function CatalogFilterSidebar({ programs, filters, hasActiveQuery }) {
                     <div className="grid gap-2">
                         <Button
                             type="button"
-                            variant={filters.status === 'Available' ? 'default' : 'outline'}
-                            className="w-full justify-center"
+                            variant="available"
+                            className={
+                                filters.status === 'Available'
+                                    ? 'w-full justify-center ring-2 ring-offset-2 ring-status-available'
+                                    : 'w-full justify-center opacity-90'
+                            }
                             onClick={() =>
                                 visitCatalog(filters, {
                                     status: 'Available',
@@ -214,8 +210,12 @@ export function CatalogFilterSidebar({ programs, filters, hasActiveQuery }) {
                         </Button>
                         <Button
                             type="button"
-                            variant={filters.status === 'Borrowed' ? 'default' : 'outline'}
-                            className="w-full justify-center"
+                            variant="borrowed"
+                            className={
+                                filters.status === 'Borrowed'
+                                    ? 'w-full justify-center ring-2 ring-offset-2 ring-status-borrowed'
+                                    : 'w-full justify-center opacity-90'
+                            }
                             onClick={() =>
                                 visitCatalog(filters, {
                                     status: 'Borrowed',
@@ -234,20 +234,16 @@ export function CatalogFilterSidebar({ programs, filters, hasActiveQuery }) {
                 <div className="space-y-2">
                     <SectionLabel>Catalog & collections</SectionLabel>
                     <div className="grid gap-2">
-                        <Button asChild variant="outline" className="w-full">
+                        <Button asChild variant="default" className="w-full">
                             <a href="/book/create">Cataloging</a>
                         </Button>
-                        <Button asChild variant="outline" className="w-full">
+                        <Button asChild variant="default" className="w-full">
                             <a href="/ebooks">View E-Resources</a>
                         </Button>
-                        <Button asChild variant="outline" className="w-full">
+                        <Button asChild variant="default" className="w-full">
                             <a href="/staff/books/archived">Archived</a>
                         </Button>
-                        <Button
-                            asChild
-                            variant="outline"
-                            className="w-full border-destructive/40 text-destructive hover:bg-destructive/10 hover:text-destructive"
-                        >
+                        <Button asChild variant="destructive" className="w-full">
                             <a href="/staff/books/trash">Trash</a>
                         </Button>
                     </div>
@@ -276,18 +272,18 @@ export function CatalogFilterSidebar({ programs, filters, hasActiveQuery }) {
                             name="file"
                             accept=".csv,.xlsx"
                             required
-                            className="text-xs"
+                            className="catalog-file-input text-xs file:mr-2 file:rounded-md file:border-0 file:bg-primary file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-primary-foreground hover:file:bg-primary/85"
                         />
-                        <Button type="submit" variant="outline" className="w-full">
+                        <Button type="submit" variant="success" className="w-full">
                             Import books
                         </Button>
                     </form>
                     {hasActiveQuery ? (
-                        <Button asChild variant="outline" className="w-full">
+                        <Button asChild variant="destructive" className="w-full">
                             <a href={exportHref(filters)}>Export results</a>
                         </Button>
                     ) : (
-                        <Button type="button" variant="outline" className="w-full" disabled>
+                        <Button type="button" variant="destructive" className="w-full" disabled>
                             Export books
                         </Button>
                     )}

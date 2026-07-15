@@ -54,10 +54,21 @@ Separate from sidebar/gate colors. Changing sidebar active will not recolor thes
 | `--brand-shell-muted-text` | "Showing 2229 titles…", hints |
 | `--brand-shell-action-text` | View / Actions button labels in tables |
 | `--brand-shell-filter-label` | Catalog filter sidebar labels |
-| `--brand-shell-button-bg` | Primary filled buttons, Available badge, active pagination |
+| `--brand-shell-button-bg` | Primary filled buttons (**= sidebar bg**) |
 | `--brand-shell-button-text` | Text on primary filled buttons and badges |
 | `--brand-shell-secondary` | Secondary filled buttons (independent of sidebar/active) |
 | `--brand-shell-secondary-text` | Text on secondary filled buttons |
+
+### Fixed status colors (never tied to school green/red branding)
+
+| Variable | What you see |
+|----------|----------------|
+| `--brand-status-available` | Available filter + badge (default `#16a34a`) |
+| `--brand-status-borrowed` | Borrowed filter + badge (default `#dc2626`) |
+| `--brand-status-success` | Import / success actions (default `#16a34a`) |
+| `--brand-status-danger` | Trash / export / delete (default `#dc2626`) |
+
+Logout uses `--brand-logout-bg` → defaults to primary (`--brand-shell-button-bg`).
 
 ### Gate terminal (`/attendance`)
 

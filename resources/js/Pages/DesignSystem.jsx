@@ -54,7 +54,10 @@ export default function DesignSystem({ branding }) {
                             <Button>Primary</Button>
                             <Button variant="secondary">Secondary</Button>
                             <Button variant="outline">Outline</Button>
-                            <Button variant="destructive">Destructive</Button>
+                            <Button variant="available">Available</Button>
+                            <Button variant="borrowed">Borrowed</Button>
+                            <Button variant="success">Success</Button>
+                            <Button variant="destructive">Danger</Button>
                         </div>
                     </section>
                 </main>

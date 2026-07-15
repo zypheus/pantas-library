@@ -88,13 +88,20 @@
     color: var(--brand-nav-link, #1f4ea7);
 }
 
-.user-menu-dropdown__item--danger {
-    color: #b91c1c;
+.user-menu-dropdown__item--danger,
+.user-menu-dropdown__item--primary {
+    color: var(--brand-logout-text, var(--brand-shell-button-text, #ffffff));
+    background: var(--brand-logout-bg, var(--brand-shell-button-bg, var(--brand-sidebar-bg, #4caf50)));
 }
 
-.user-menu-dropdown__item--danger:hover {
-    background: #fef2f2;
-    color: #991b1b;
+.user-menu-dropdown__item--danger:hover,
+.user-menu-dropdown__item--primary:hover {
+    background: color-mix(
+        in srgb,
+        var(--brand-logout-bg, var(--brand-shell-button-bg, var(--brand-sidebar-bg, #4caf50))) 85%,
+        #000000
+    );
+    color: var(--brand-logout-text, var(--brand-shell-button-text, #ffffff));
 }
 
 .user-menu-dropdown__divider {

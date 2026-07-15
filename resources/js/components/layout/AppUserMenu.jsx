@@ -65,7 +65,7 @@ export function AppUserMenu() {
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
-                    className="text-destructive focus:text-destructive"
+                    className="bg-primary text-primary-foreground focus:bg-primary/90 focus:text-primary-foreground"
                     onSelect={submitLogoutForm}
                 >
                     Logout

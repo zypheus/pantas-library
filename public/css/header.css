@@ -33,7 +33,11 @@
     border:none;
 }
 .btn5:hover{
-    background-color: var(--brand-button-hover-bg, #ffb845);
-    color: var(--brand-nav-link-active, #ffe202);
+    background-color: color-mix(
+        in srgb,
+        var(--brand-logout-bg, var(--brand-shell-button-bg, #1f7902)) 85%,
+        #000000
+    );
+    color: var(--brand-logout-text, #ffffff);
 }
 

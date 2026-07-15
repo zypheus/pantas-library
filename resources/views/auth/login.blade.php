@@ -68,7 +68,7 @@
 
     <div class="auth-page__divider">Patron services</div>
 
-    <a href="{{ route('patron.register') }}" class="auth-page__btn auth-page__btn--outline">
+    <a href="{{ route('patron.register') }}" class="auth-page__btn auth-page__btn--primary">
         Patron self-registration
     </a>
 @endsection

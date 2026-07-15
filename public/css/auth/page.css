@@ -47,17 +47,22 @@
 .auth-page__home-link {
     font-size: 0.82rem;
     font-weight: 600;
-    color: #475569;
+    color: var(--brand-shell-button-text, var(--brand-text-light, #ffffff));
     text-decoration: none;
     padding: 0.35rem 0.7rem;
-    border: 1px solid #cbd5e1;
+    border: 1px solid transparent;
     border-radius: 8px;
-    background: #fff;
+    background: var(--brand-shell-button-bg, var(--brand-sidebar-bg, var(--brand-accent, #4caf50)));
 }
 
 .auth-page__home-link:hover {
-    color: var(--brand-button-bg, #1f4ea7);
-    border-color: var(--brand-button-bg, #1f4ea7);
+    color: var(--brand-shell-button-text, var(--brand-text-light, #ffffff));
+    background: color-mix(
+        in srgb,
+        var(--brand-shell-button-bg, var(--brand-sidebar-bg, var(--brand-accent, #4caf50))) 85%,
+        #000000
+    );
+    border-color: transparent;
 }
 
 .auth-page__card {
@@ -179,13 +184,17 @@
 }
 
 .auth-page__btn--primary {
-    background: var(--brand-auth-signin-bg, var(--brand-accent, #4caf50));
-    color: var(--brand-auth-signin-text, var(--brand-text-light, #ffffff));
+    background: var(--brand-shell-button-bg, var(--brand-auth-signin-bg, var(--brand-sidebar-bg, #4caf50)));
+    color: var(--brand-shell-button-text, var(--brand-auth-signin-text, #ffffff));
 }
 
 .auth-page__btn--primary:hover {
-    background: var(--brand-auth-signin-hover-bg, var(--brand-green-dark, #2e7d32));
-    color: var(--brand-auth-signin-text, var(--brand-text-light, #ffffff));
+    background: color-mix(
+        in srgb,
+        var(--brand-shell-button-bg, var(--brand-auth-signin-bg, var(--brand-sidebar-bg, #4caf50))) 85%,
+        #000000
+    );
+    color: var(--brand-shell-button-text, var(--brand-auth-signin-text, #ffffff));
 }
 
 .auth-page__btn--outline {
