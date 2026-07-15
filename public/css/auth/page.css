@@ -33,7 +33,7 @@
 .auth-page__brand-title {
     font-size: 1.1rem;
     font-weight: 800;
-    color: var(--brand-button-bg, #1f4ea7);
+    color: var(--brand-shell-button-bg, var(--brand-sidebar-bg, var(--brand-accent, #4caf50)));
     margin: 0;
     line-height: 1.2;
 }
