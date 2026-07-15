@@ -27,35 +27,37 @@ BRANDING_CSS=branding/branding.css
 |----------|---------|
 | `--brand-primary` | Gold / yellow highlights |
 | `--brand-accent` | Green |
-| `--brand-blue` | Blue actions & active nav |
+| `--brand-blue` | Shared accent — only where you set a variable to use it |
 | `--brand-green-dark` | Dark green (hovers, borders) |
 
-### Sidebar
+### Sidebar (independent of main content buttons)
 
 | Variable | What you see |
 |----------|----------------|
-| `--brand-sidebar-bg` | Sidebar background (green) |
+| `--brand-sidebar-bg` | Sidebar background |
 | `--brand-sidebar-portal-text` | "STAFF PORTAL" subtitle (defaults to `--brand-text-light`) |
 | `--brand-sidebar-role-text` | Administrator / Staff badge (defaults to `--brand-text-light`) |
-| `--brand-sidebar-active-bg` | Active menu tab fill (blue) |
-| `--brand-sidebar-highlight` | Yellow left bar on active tab |
+| `--brand-sidebar-active-bg` | Active menu tab fill — **does not** change catalog/page buttons |
+| `--brand-sidebar-highlight` | Left bar on active tab |
 | `--brand-sidebar-active-text` | Text on active tab |
 | `--brand-sidebar-border` | Dividers |
 
 Hover is derived automatically from the active color — no separate variable needed.
 
-### Main content (catalog tables, cards)
+### Main content (catalog tables, cards, filled buttons)
 
-Separate from sidebar/gate colors — keeps table text readable on white backgrounds.
+Separate from sidebar/gate colors. Changing sidebar active will not recolor these.
 
 | Variable | What you see |
 |----------|----------------|
 | `--brand-shell-text` | Table body text, titles, authors (defaults to `--brand-text-dark`) |
 | `--brand-shell-muted-text` | "Showing 2229 titles…", hints |
 | `--brand-shell-action-text` | View / Actions button labels in tables |
-| `--brand-shell-filter-label` | Catalog filter sidebar labels (can use `--brand-blue`) |
-| `--brand-shell-button-bg` | Filled buttons, Available badge, active pagination |
-| `--brand-shell-button-text` | Text on filled buttons and badges |
+| `--brand-shell-filter-label` | Catalog filter sidebar labels |
+| `--brand-shell-button-bg` | Primary filled buttons, Available badge, active pagination |
+| `--brand-shell-button-text` | Text on primary filled buttons and badges |
+| `--brand-shell-secondary` | Secondary filled buttons (independent of sidebar/active) |
+| `--brand-shell-secondary-text` | Text on secondary filled buttons |
 
 ### Gate terminal (`/attendance`)
 
@@ -96,7 +98,7 @@ All paths live under `public/images/`:
 |--------|---------|
 | `images/branding/` | **School** — staff sidebar, login, OPAC, favicon, banner |
 | `images/platform/` | **Platform home** (`/`) — PANTAS marketing logos (set `BRANDING_PLATFORM_*` in `.env`) |
-| `images/system/` | App defaults — placeholder book cover, avatar |
+| `images/system/` | App defaults — `default-book.png`, avatar placeholders |
 
 See `public/images/branding/README.md` and `public/images/platform/README.md`.
 

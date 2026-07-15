@@ -3,82 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $brand['school_name'] }} | Home</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <!-- Favicon -->
     <link rel="icon" type="{{ $brand['favicon_mime'] ?? 'image/x-icon' }}" href="{{ $brand['favicon_url'] }}">
-    <title>PANTAS | Platform</title>
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
+
 <body>
+    <!-- ===========================
+         HEADER
+    ============================ -->
 
     <header>
-        <div class="logo-container">
-            <img src="{{ $brand['platform_logo_landscape_url'] }}" alt="{{ $brand['system_name'] }} Logo" class="logo">
+
+        <div class="header-container">
+
+            <a class="logo-section" href="{{ route('home') }}">
+
+                <img src="{{ $brand['logo_compact_url'] ?: asset('images/moistlogo.jpg') }}" class="logo-icon" alt="{{ $brand['school_name'] }} Logo">
+
+                <div class="logo-text">
+                    <h2>{{ $brand['school_name'] }}</h2>
+                </div>
+
+            </a>
+
+            <nav id="main-nav">
+
+                <a href="#about">ABOUT</a>
+                <a href="{{ route('landing') }}">OPAC</a>
+                <a href="{{ $brand['zendy_url'] }}">ZENDY</a>
+                <a href="#">CONTACT US</a>
+                <a href="{{ url('/rooms/book') }}">ROOM RESERVATIONS</a>
+                <a href="{{ route('feedback.create') }}" class="feedback-link">FEEDBACK</a>
+                <a href="{{ route('login') }}" class="login-button">LOGIN</a>
+
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
         </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="{{ route('landing') }}" >OPAC</a></li>
-                <li><a href="{{ $brand['zendy_url'] }}">ZENDY</a></li>
-                <li><a href="#">CONTACT US</a></li>
-                <li><a href="{{ url('/rooms/book') }}">ROOM RESERVATIONS</a></li>
-                <li><a href="{{ route('feedback.create') }}" class="feedback-link" >FEEDBACK</a></li>
-                <li><a href="{{ route('login') }}" class="login-button">LOGIN</a></li>
-            </ul>
-        </nav>
+
     </header>
 
-    <main class="hero">
-        <div class="hero-content">
-            <h1 class="fade-in">WELCOME TO PANTAS</h1>
-        </div>
-    </main>
 
-    <section class="about-section fade-in-scroll">
-        <div class="container">
-            <img src="{{ $brand['platform_logo_url'] }}" alt="{{ $brand['system_name'] }} Logo Large" class="about-logo">
-            
-            <h2 class="tagline">"Pinoy Automated Next-Generation Technology for Academic Services"</h2>
-            
-            <p class="description">
-                PANTAS (Affiliated by AREA51) is a smart digital library system designed to revolutionize how libraries operate. It bridges traditional physical resources with modern digital management using advanced RFID technology. As AREA 51’s first start-up venture, PANTAS aims to build the libraries of tomorrow – offering intelligent solutions that improve efficiency, enhance security, and simplify daily operations for librarians, educators, and institutions.
-            </p>
-            
-            <h3 class="footer-motto">“Your Partner in Building the Libraries of Tomorrow”</h3>
+
+    <!-- ===========================
+         HERO SECTION
+    ============================ -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <!-- Video -->
+
+            <div class="hero-video">
+
+                <video autoplay muted loop playsinline controls preload="auto">
+
+                    <source src="{{ asset('videos/howToRegister-zendy.mp4') }}" type="video/mp4">
+
+                    Your browser does not support the video tag.
+
+                </video>
+
+            </div>
+
+
+            <!-- OPAC SEARCH -->
+
+            <div class="hero-search">
+
+                <h2>Library OPAC</h2>
+
+                <p>
+                    Search books, journals, theses,
+                    and other library resources.
+                </p>
+
+                <form class="search-box" method="GET" action="{{ route('landing') }}" role="search">
+
+                    <input
+                        type="search"
+                        name="search"
+                        placeholder="Search title, author, ISBN..."
+                        autocomplete="off"
+                        aria-label="Search library catalog"
+                    >
+
+                    <button type="submit">
+                        Search
+                    </button>
+
+                </form>
+
+            </div>
+
         </div>
+
     </section>
 
-<footer>
-        <div class="footer-container">
-            <div class="footer-col branding">
-                <img src="{{ $brand['platform_logo_landscape_url'] }}" alt="{{ $brand['system_name'] }} Logo" class="footer-logo">
-                <img src="{{ $brand['platform_vendor_logo_url'] }}" alt="Vendor Logo" class="footer-logo-sub">
-                <p class="copyright">Pantas &copy; 2025. All Rights Reserved.</p>
-            </div>
 
-            <div class="footer-col">
-                <h3>QUICK LINKS</h3>
-                <ul>
-                    <li><a href="{{ route('home') }}">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="contact us.html">CONTACT US</a></li>
-                    <li><a href="#">ROOM RESERVATIONS</a></li>
-                </ul>
-            </div>
 
-            <div class="footer-col">
-                <h3>GET IN TOUCH</h3>
-                <p>Zamoras Bldg, 2nd Floor, Purok 4, Glodo Subd,<br>
-                   San Francisco, Panabo City, Davao del Norte</p>
-                <p class="schedule">MONDAY - FRIDAY<br>9:00 AM - 5:00 PM</p>
-                <p><a href="mailto:inquiry@area51.ph">inquiry@area51.ph</a></p>
-                <p>0917 762 1021</p>
-            </div>
+    <!-- ===========================
+         WELCOME SECTION
+    ============================ -->
+
+    <section class="welcome-section" id="about">
+
+        <div class="welcome-text">
+
+            <span class="section-title">
+                WELCOME TO
+            </span>
+
+            <h1 id="typing-title">
+
+                Misamis Oriental Institute of Science
+                and Technology (MOIST)
+
+            </h1>
+
+            <p class="welcome-description">
+
+                Explore our website today to learn more about our academic
+                offerings, research opportunities, student support services,
+                and exciting campus life. Join us in shaping the future and
+                making a difference in the world.
+
+            </p>
+
+            <a href="#" class="learn-btn">
+                Learn More
+            </a>
+
         </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+         LATEST COURSES
+    ============================ -->
+
+    <section class="info-section">
+
+        <div class="info-courses">
+
+            <h2 class="typing-courses">Latest Courses</h2>
+
+            <p>
+
+                "Explore cutting-edge topics in our latest courses,
+                designed to empower students with practical knowledge
+                and skills for today's rapidly changing world."
+
+            </p>
+
+        </div>
+
+
+        <div class="info-news">
+
+            <h3 class="typing-news">News & Events</h3>
+
+            <p>
+
+                Stay informed with the latest campus announcements,
+                seminars, workshops, academic activities,
+                and upcoming events at MOIST.
+
+            </p>
+
+        </div>
+
+    </section>
+    
+    <!-- ===========================
+         FOOTER
+    ============================ -->
+
+    <footer>
+
+    <div class="footer-container">
+
+        <!-- Column 1 -->
+
+        <div class="footer-column">
+
+            <h3>INFORMATION</h3>
+
+            <ul>
+
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Terms of Use</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- Column 2 -->
+
+        <div class="footer-column">
+
+            <h3>STUDENT HELP</h3>
+
+            <ul>
+
+                <li><a href="#">Get Started</a></li>
+                <li><a href="#">My Questions</a></li>
+                <li><a href="#">Download Files</a></li>
+                <li><a href="#">Latest Courses</a></li>
+                <li><a href="#">Academic News</a></li>
+
+            </ul>
+
+        </div>
+ <div class="footer-column">
+
+            <h3>CONTACT</h3>
+
+            <p>Sta. Cruz, Cogon, Balingasag</p>
+
+            <p>Misamis Oriental</p>
+
+            <p>☎ PLDT: (088)-855-2885</p>
+
+            <p>✉ moist@moist.edu.ph</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; {{ date('Y') }} MOIST. All rights reserved.</p>
+    </div>
+
     </footer>
 
-    
+    <!-- JavaScript -->
 
+    <script src="{{ asset('js/script.js') }}"></script>
 
-
-    <script src="{{ asset('script.js') }}"></script>
 </body>
 </html>

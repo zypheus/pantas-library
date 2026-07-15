@@ -22,7 +22,7 @@
   /* --- Core palette (change these first — many lines below copy from here) --- */
   --brand-primary: #ffd700; /* Main school color: gate terminal panel, sidebar "STAFF PORTAL" text, active tab bar */
   --brand-accent: #4caf50; /* Secondary color: staff sidebar background, Bootstrap success */
-  --brand-blue: #1f4ea7; /* Main blue: active sidebar tab, primary buttons, links, nav items */
+  --brand-blue: #1f4ea7; /* Accent color: use only where you explicitly reference it (e.g. active tab fill) */
   --brand-blue-dark: #163a82; /* Darker blue: chart accents (rarely seen directly) */
   --brand-green-dark: #2e7d32; /* Dark green: button hover, nav hover text, sidebar dividers */
   --brand-text-dark: #333333; /* Dark text on light backgrounds (page body, cards, forms) */
@@ -35,8 +35,8 @@
   --brand-sidebar-role-text: var(--brand-text-light); /* Administrator / Staff badge text */
   --brand-sidebar-highlight: var(--brand-primary); /* Yellow left stripe on active tab */
   --brand-sidebar-highlight-text: var(--brand-text-dark); /* Text on gold/yellow elements (if any) */
-  --brand-sidebar-active-bg: var(--brand-blue); /* Background fill of the currently selected menu item (blue) */
-  --brand-sidebar-active-text: var(--brand-text-light); /* Text/icon color on the active menu item */
+  --brand-sidebar-active-bg: var(--brand-blue); /* Active menu item fill — SIDEBAR ONLY (never changes main buttons) */
+  --brand-sidebar-active-text: var(--brand-text-light); /* Text/icon on the active menu item */
   --brand-sidebar-border: var(--brand-green-dark); /* Horizontal lines between sidebar sections (Menu, footer) */
   /* --brand-sidebar-bg-dark: #1e4620; */ /* Optional: sidebar background in dark mode (uncomment to override) */
 
@@ -67,10 +67,11 @@
   --brand-shell-muted-text: #64748b; /* "Showing 2229 titles…", hints, summaries */
   --brand-shell-action-text: var(--brand-text-dark); /* View / Actions outline buttons in tables */
   --brand-shell-filter-label: var(--brand-blue); /* Catalog filter sidebar labels (can be yellow) */
-  --brand-shell-button-bg: var(--brand-accent); /* Filled buttons, active pagination, Available badge */
-  --brand-shell-button-text: var(--brand-text-light); /* Label on filled buttons and badges */
-  --brand-shell-primary: var(--brand-shell-button-bg); /* shadcn primary (buttons/badges) */
-  --brand-shell-secondary: var(--brand-blue); /* Secondary filled buttons */
+  --brand-shell-button-bg: var(--brand-accent); /* Filled primary buttons — MAIN CONTENT ONLY (not sidebar active) */
+  --brand-shell-button-text: var(--brand-text-light); /* Label on filled primary buttons and badges */
+  --brand-shell-primary: var(--brand-shell-button-bg); /* Alias of shell button bg */
+  --brand-shell-secondary: #64748b; /* Secondary filled buttons — independent of sidebar / --brand-blue */
+  --brand-shell-secondary-text: var(--brand-text-light); /* Text on secondary filled buttons */
   --brand-shell-accent: var(--brand-primary); /* Highlight chips / accents in main area */
 
   /* --- Legacy Blade pages (OPAC, kiosk, attendance, public forms) --- */
@@ -140,7 +141,7 @@
   --primary: var(--brand-shell-button-bg);
   --primary-foreground: var(--brand-shell-button-text);
   --secondary: var(--brand-shell-secondary);
-  --secondary-foreground: var(--brand-shell-button-text);
+  --secondary-foreground: var(--brand-shell-secondary-text);
   --accent: var(--brand-shell-accent);
   --accent-foreground: var(--brand-shell-text);
   --background: var(--brand-shell-background);

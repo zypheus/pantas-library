@@ -96,7 +96,7 @@ export function CatalogFilterSidebar({ programs, filters, hasActiveQuery }) {
                         !filters.year1 &&
                         !filters.status
                             ? 'default'
-                            : 'secondary'
+                            : 'outline'
                     }
                     onClick={() => visitCatalog(filters, { show_all: 1, page: undefined })}
                 >
@@ -234,7 +234,7 @@ export function CatalogFilterSidebar({ programs, filters, hasActiveQuery }) {
                 <div className="space-y-2">
                     <SectionLabel>Catalog & collections</SectionLabel>
                     <div className="grid gap-2">
-                        <Button asChild variant="secondary" className="w-full">
+                        <Button asChild variant="outline" className="w-full">
                             <a href="/book/create">Cataloging</a>
                         </Button>
                         <Button asChild variant="outline" className="w-full">

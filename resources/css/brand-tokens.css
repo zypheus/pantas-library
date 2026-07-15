@@ -18,10 +18,10 @@
     --card-foreground: var(--brand-shell-text, var(--brand-text-dark, #333333));
     --popover: var(--brand-shell-card, #ffffff);
     --popover-foreground: var(--brand-shell-text, var(--brand-text-dark, #333333));
-    --primary: var(--brand-shell-button-bg, var(--brand-shell-primary, var(--brand-accent, #4caf50)));
+    --primary: var(--brand-shell-button-bg, var(--brand-shell-primary, #4caf50));
     --primary-foreground: var(--brand-shell-button-text, var(--brand-text-light, #ffffff));
-    --secondary: var(--brand-shell-secondary, var(--brand-blue, #1f4ea7));
-    --secondary-foreground: var(--brand-shell-button-text, var(--brand-text-light, #ffffff));
+    --secondary: var(--brand-shell-secondary, #64748b);
+    --secondary-foreground: var(--brand-shell-secondary-text, var(--brand-text-light, #ffffff));
     --muted: var(--brand-shell-muted, #f4f6f9);
     --muted-foreground: var(--brand-shell-muted-text, #64748b);
     --accent: var(--brand-shell-accent, var(--brand-primary, #ffd700));
@@ -30,7 +30,7 @@
     --destructive-foreground: var(--brand-danger-text, #ffffff);
     --border: var(--brand-shell-border, #e5e7eb);
     --input: var(--brand-shell-border, #e5e7eb);
-    --ring: var(--brand-shell-button-bg, var(--brand-shell-primary, var(--brand-accent, #4caf50)));
+    --ring: var(--brand-shell-button-bg, var(--brand-shell-primary, #4caf50));
 
     --chart-1: var(--brand-accent, #4caf50);
     --chart-2: var(--brand-blue, #1f4ea7);
