@@ -71,14 +71,14 @@
 }
 
 .prog-mgr__btn--outline {
-    background: #fff;
-    color: #475569;
-    border: 1px solid #cbd5e1;
+    background: var(--brand-button-bg, #1f4ea7);
+    color: var(--brand-button-text, #fff);
+    border: 1px solid transparent;
 }
 
 .prog-mgr__btn--outline:hover {
-    background: #f8fafc;
-    color: var(--brand-button-bg, #1f4ea7);
+    background: var(--brand-button-hover-bg, #163a82);
+    color: var(--brand-button-hover-text, #fff);
 }
 
 .prog-mgr__btn--danger {

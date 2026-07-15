@@ -63,24 +63,25 @@
     padding: 0.45rem 0.9rem;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #475569;
+    color: var(--brand-button-text, #fff);
     text-decoration: none;
     border-radius: 8px;
     transition: background 0.15s, color 0.15s;
-    background: transparent;
+    background: var(--brand-button-bg, #1f4ea7);
     border: none;
     font-family: inherit;
     cursor: pointer;
 }
 
 .patron-dir__tab:hover {
-    background: #fff;
-    color: var(--brand-button-bg, #1f4ea7);
+    background: var(--brand-button-hover-bg, #163a82);
+    color: var(--brand-button-hover-text, #fff);
 }
 
 .patron-dir__tab.active {
-    background: var(--brand-button-bg, #1f4ea7);
-    color: #fff;
+    background: color-mix(in srgb, var(--brand-button-bg, #1f4ea7) 78%, #000000);
+    color: var(--brand-button-text, #fff);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 
 .patron-dir__quick-actions {
@@ -95,33 +96,33 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.65rem 1rem;
-    background: #fff;
-    border: 2px solid #e2e8f0;
+    background: var(--brand-button-bg, #1f4ea7);
+    border: 2px solid transparent;
     border-radius: 10px;
     text-decoration: none;
-    color: #1e293b;
+    color: var(--brand-button-text, #fff);
     font-size: 0.9rem;
     font-weight: 600;
-    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
-    transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.12);
+    transition: background 0.15s, transform 0.1s;
 }
 
 .patron-dir__quick-action:hover {
-    border-color: var(--brand-button-bg, #1f4ea7);
-    background: #f8fafc;
-    color: var(--brand-button-bg, #1f4ea7);
+    background: var(--brand-button-hover-bg, #163a82);
+    color: var(--brand-button-hover-text, #fff);
     transform: translateY(-1px);
 }
 
 .patron-dir__quick-action--attention {
-    border-color: #f59e0b;
-    background: #fffbeb;
+    border-color: transparent;
+    background: var(--brand-button-bg, #1f4ea7);
+    color: var(--brand-button-text, #fff);
 }
 
 .patron-dir__quick-action--attention:hover {
-    border-color: #d97706;
-    background: #fef3c7;
-    color: #92400e;
+    border-color: transparent;
+    background: var(--brand-button-hover-bg, #163a82);
+    color: var(--brand-button-hover-text, #fff);
 }
 
 .patron-dir__quick-action-count {
@@ -132,11 +133,10 @@
     height: 1.35rem;
     padding: 0 0.4rem;
     font-size: 0.75rem;
-    font-weight: 800;
+    font-weight: 700;
     border-radius: 999px;
-    background: #f59e0b;
-    color: #fff;
-    line-height: 1;
+    background: rgba(255, 255, 255, 0.22);
+    color: var(--brand-button-text, #fff);
 }
 
 .patron-dir__quick-action-label {
@@ -304,24 +304,25 @@
 }
 
 .patron-dir__btn--outline {
-    background: #fff;
-    color: #475569;
-    border: 1px solid #cbd5e1;
+    background: var(--brand-button-bg, #1f4ea7);
+    color: var(--brand-button-text, #fff);
+    border: 1px solid transparent;
 }
 
 .patron-dir__btn--outline:hover {
-    background: #f8fafc;
-    color: var(--brand-button-bg, #1f4ea7);
+    background: var(--brand-button-hover-bg, #163a82);
+    color: var(--brand-button-hover-text, #fff);
 }
 
 .patron-dir__btn--ghost {
-    background: transparent;
-    color: #475569;
+    background: var(--brand-button-bg, #1f4ea7);
+    color: var(--brand-button-text, #fff);
     border: 1px solid transparent;
 }
 
 .patron-dir__btn--ghost:hover {
-    background: #f1f5f9;
+    background: var(--brand-button-hover-bg, #163a82);
+    color: var(--brand-button-hover-text, #fff);
 }
 
 .patron-dir__badge {

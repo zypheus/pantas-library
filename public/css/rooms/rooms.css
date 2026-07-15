@@ -270,13 +270,14 @@
 }
 
 .rooms-btn--outline {
-    background: #fff;
-    color: var(--brand-button-bg, #22333b);
-    border: 1px solid #cbd5e1;
+    background: var(--brand-button-bg, #22333b);
+    color: var(--brand-button-text, #fff);
+    border: 1px solid transparent;
 }
 
 .rooms-btn--outline:hover {
-    background: #f8fafc;
+    background: var(--brand-button-hover-bg, #163a82);
+    color: var(--brand-button-hover-text, #fff);
 }
 
 .rooms-btn--success {

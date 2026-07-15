@@ -356,9 +356,53 @@
         color: var(--brand-shell-text, var(--foreground)) !important;
     }
 
-    .admin-shell [data-slot="admin-main"] [data-slot="button"][data-variant="outline"],
-    .admin-shell [data-slot="admin-main"] [data-slot="table"] a {
-        color: var(--brand-shell-action-text, var(--brand-shell-text, var(--foreground))) !important;
+    /*
+     * Main content buttons: filled primary (sidebar color).
+     * Status variants (available / borrowed / success / danger) stay semantic.
+     */
+    .admin-shell [data-slot="admin-main"] [data-slot="button"]:not([data-variant="available"]):not([data-variant="borrowed"]):not([data-variant="success"]):not([data-variant="destructive"]):not([data-variant="ghost"]):not([data-variant="link"]),
+    .admin-shell [data-slot="admin-main"] .legacy-page-content a.btn,
+    .admin-shell [data-slot="admin-main"] .legacy-page-content button.btn,
+    .admin-shell [data-slot="admin-main"] .legacy-page-content [class*="__btn"],
+    .admin-shell [data-slot="admin-main"] .legacy-page-content [class*="__quick-action"],
+    .admin-shell [data-slot="admin-main"] .legacy-page-content .patron-dir__tab {
+        background: var(--brand-shell-button-bg, var(--brand-sidebar-bg, var(--primary))) !important;
+        color: var(--brand-shell-button-text, #ffffff) !important;
+        border-color: transparent !important;
+    }
+
+    .admin-shell [data-slot="admin-main"] [data-slot="button"]:not([data-variant="available"]):not([data-variant="borrowed"]):not([data-variant="success"]):not([data-variant="destructive"]):not([data-variant="ghost"]):not([data-variant="link"]):hover,
+    .admin-shell [data-slot="admin-main"] .legacy-page-content a.btn:hover,
+    .admin-shell [data-slot="admin-main"] .legacy-page-content button.btn:hover,
+    .admin-shell [data-slot="admin-main"] .legacy-page-content [class*="__btn"]:hover,
+    .admin-shell [data-slot="admin-main"] .legacy-page-content [class*="__quick-action"]:hover,
+    .admin-shell [data-slot="admin-main"] .legacy-page-content .patron-dir__tab:hover {
+        background: color-mix(
+            in srgb,
+            var(--brand-shell-button-bg, var(--brand-sidebar-bg, var(--primary))) 82%,
+            #000000
+        ) !important;
+        color: var(--brand-shell-button-text, #ffffff) !important;
+    }
+
+    /* Keep semantic green/red buttons when modules mark them */
+    .admin-shell [data-slot="admin-main"] .legacy-page-content [class*="__btn--success"],
+    .admin-shell [data-slot="admin-main"] .legacy-page-content [class*="btn-success"] {
+        background: var(--brand-status-success, #16a34a) !important;
+        color: var(--brand-status-success-text, #ffffff) !important;
+    }
+
+    .admin-shell [data-slot="admin-main"] .legacy-page-content [class*="__btn--danger"],
+    .admin-shell [data-slot="admin-main"] .legacy-page-content [class*="btn-danger"],
+    .admin-shell [data-slot="admin-main"] .legacy-page-content [class*="__btn--destructive"] {
+        background: var(--brand-status-danger, #dc2626) !important;
+        color: var(--brand-status-danger-text, #ffffff) !important;
+    }
+
+    .admin-shell [data-slot="admin-main"] .legacy-page-content .patron-dir__quick-action-count,
+    .admin-shell [data-slot="admin-main"] .legacy-page-content .patron-dir__badge {
+        background: rgba(255, 255, 255, 0.22) !important;
+        color: var(--brand-shell-button-text, #ffffff) !important;
     }
 
     .admin-shell [data-slot="admin-main"] .catalog-filter-label {

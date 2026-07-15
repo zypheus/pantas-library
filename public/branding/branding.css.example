@@ -96,10 +96,10 @@
   --brand-logout-bg: var(--brand-shell-button-bg); /* Logout buttons — primary (same as sidebar) */
   --brand-logout-text: var(--brand-shell-button-text); /* Logout button text */
 
-  --brand-button-bg: var(--brand-blue); /* Default button background (forms, tables, auth login) */
-  --brand-button-text: var(--brand-text-light); /* Default button label color */
-  --brand-button-hover-bg: var(--brand-green-dark); /* Button background when mouse hovers */
-  --brand-button-hover-text: var(--brand-text-light); /* Button label when mouse hovers */
+  --brand-button-bg: var(--brand-shell-button-bg); /* Filled buttons on Blade pages (= sidebar / primary) */
+  --brand-button-text: var(--brand-shell-button-text); /* Button label on Blade pages */
+  --brand-button-hover-bg: color-mix(in srgb, var(--brand-shell-button-bg) 82%, #000000); /* Hover darken */
+  --brand-button-hover-text: var(--brand-shell-button-text); /* Hover label */
 
   --brand-danger-bg: var(--brand-blue); /* Delete/warning button background (legacy pages) */
   --brand-danger-hover-bg: var(--brand-green-dark); /* Delete/warning button on hover */
