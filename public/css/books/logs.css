@@ -564,6 +564,58 @@
 .circulation-table__title {
     font-weight: 600;
     max-width: 220px;
+    vertical-align: middle;
+}
+
+.circ-title-preview {
+    position: relative;
+    display: block;
+    max-width: 220px;
+    cursor: default;
+}
+
+.circ-title-preview__text {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.circ-title-preview__float {
+    position: fixed;
+    z-index: 1080;
+    display: none;
+    width: min(280px, 70vw);
+    padding: 0.65rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.16);
+    white-space: normal;
+    pointer-events: none;
+    align-items: flex-start;
+    gap: 0.65rem;
+}
+
+.circ-title-preview__float.is-visible {
+    display: flex;
+}
+
+.circ-title-preview__cover {
+    width: 56px;
+    height: 78px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    background: #e2e8f0;
+}
+
+.circ-title-preview__full {
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #0f172a;
 }
 
 .circulation-page .pagination .page-link {

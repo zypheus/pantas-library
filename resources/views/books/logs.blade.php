@@ -289,7 +289,23 @@
                         }
                     @endphp
                     <tr>
-                        <td class="circulation-table__title">{{ $log->book->title_statement ?? 'N/A' }}</td>
+                        <td class="circulation-table__title">
+                            @php
+                                $logTitle = $log->book->title_statement ?? 'N/A';
+                                $logCover = filled($log->book?->cover_image ?? null)
+                                    ? asset('storage/' . $log->book->cover_image)
+                                    : ($brand['default_book_url'] ?? null);
+                            @endphp
+                            <span class="circ-title-preview" tabindex="0">
+                                <span class="circ-title-preview__text" title="{{ $logTitle }}">{{ $logTitle }}</span>
+                                <span class="circ-title-preview__float" role="tooltip">
+                                    @if($logCover)
+                                        <img src="{{ $logCover }}" alt="" class="circ-title-preview__cover" loading="lazy">
+                                    @endif
+                                    <span class="circ-title-preview__full">{{ $logTitle }}</span>
+                                </span>
+                            </span>
+                        </td>
                         <td class="small">
                             @if($log->book)
                                 <code>{{ $log->book->copyIdentifierForCirculation() ?? '—' }}</code>
@@ -411,6 +427,43 @@
 <script src="{{ asset('js/loan-terms.js') }}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.circ-title-preview').forEach(function (el) {
+        const float = el.querySelector('.circ-title-preview__float');
+        if (!float) return;
+
+        function place() {
+            const rect = el.getBoundingClientRect();
+            const pad = 8;
+            const width = Math.min(280, window.innerWidth * 0.7);
+            let left = rect.left;
+            let top = rect.bottom + 6;
+
+            if (left + width > window.innerWidth - pad) {
+                left = Math.max(pad, window.innerWidth - width - pad);
+            }
+            float.style.width = width + 'px';
+            float.classList.add('is-visible');
+
+            const floatHeight = float.offsetHeight || 100;
+            if (top + floatHeight > window.innerHeight - pad) {
+                top = Math.max(pad, rect.top - floatHeight - 6);
+            }
+
+            float.style.left = left + 'px';
+            float.style.top = top + 'px';
+        }
+
+        function hide() {
+            float.classList.remove('is-visible');
+        }
+
+        el.addEventListener('mouseenter', place);
+        el.addEventListener('focusin', place);
+        el.addEventListener('mouseleave', hide);
+        el.addEventListener('focusout', hide);
+        window.addEventListener('scroll', hide, true);
+    });
+
     const patronSuggestUrl = @json(route('patron.suggestions'));
     const bookSuggestUrl = @json(route('book.suggestions'));
     @php
