@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             FeedbackSampleSeeder::class,
             BookSampleSeeder::class,
             LibraryHoldingsReportSampleSeeder::class,
+            DeveloperSeeder::class,
         ]);
 
         User::updateOrCreate(
@@ -35,6 +36,6 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $this->command?->info('Database seeded: MARC framework, programs, students, attendance logs, feedback, books, test user (test@example.com).');
+        $this->command?->info('Database seeded: MARC framework, programs, students, attendance logs, feedback, books, test admin (test@example.com), developer (see DeveloperSeeder output).');
     }
 }

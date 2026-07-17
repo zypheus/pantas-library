@@ -18,12 +18,16 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('isStaff', fn(User $user) => $user->role === 'staff');
 
+        Gate::define('isDeveloper', fn(User $user) => $user->role === 'developer');
+
+        Gate::define('manageAppearance', fn(User $user) => $user->role === 'developer');
+
         Gate::define('isAdminOrStaff', fn(User $user) =>
-            in_array($user->role, ['admin', 'staff'])
+            in_array($user->role, ['admin', 'staff'], true)
         );
 
         Gate::define('isStudent', fn(User $user) =>
-            in_array($user->role, ['student', 'faculty']) // treat faculty same
+            in_array($user->role, ['student', 'faculty'], true)
         );
     }
 }

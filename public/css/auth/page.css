@@ -1,4 +1,3 @@
-/* Shared staff auth pages — login, forgot password, reset password */
 .auth-page {
     min-height: 100vh;
     background: linear-gradient(
@@ -244,4 +243,13 @@
     .auth-page__hero h1 {
         font-size: 1.3rem;
     }
+}
+
+.auth-page__staging-banner {
+    background: #f59e0b;
+    color: #111827;
+    text-align: center;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
 }

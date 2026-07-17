@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $brand['school_name'] }} | Home</title>
 
-    <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset(config('branding.css_path')) }}">
+    <link rel="stylesheet" href="{{ url('/branding/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/brand-typography.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- Favicon -->

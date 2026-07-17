@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $brand['library_name'] }} — Feedback</title>
     <link rel="stylesheet" href="{{ asset(config('branding.css_path')) }}">
+    <link rel="stylesheet" href="{{ url('/branding/theme.css') }}">
     <link rel="stylesheet" href="{{ asset('css/feedback.css') }}">
     <link rel="stylesheet" href="{{ asset('css/brand-typography.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">

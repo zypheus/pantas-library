@@ -1,0 +1,36 @@
+/*
+ * Maps school --brand-* tokens onto shadcn / Tailwind semantic variables.
+ * Static defaults below; /branding/theme.css overrides --brand-* at runtime.
+ */
+
+:root {
+  --radius: 0.625rem;
+
+  --background: var(--brand-shell-background, #ffffff);
+  --foreground: var(--brand-text-dark, #333333);
+  --card: var(--brand-shell-card, #ffffff);
+  --card-foreground: var(--brand-text-dark, #333333);
+  --popover: #ffffff;
+  --popover-foreground: var(--brand-text-dark, #333333);
+  --primary: var(--brand-shell-button-bg, var(--brand-button-primary-bg, #4caf50));
+  --primary-foreground: var(--brand-shell-button-text, var(--brand-button-primary-text, #ffffff));
+  --secondary: var(--brand-shell-secondary, #64748b);
+  --secondary-foreground: var(--brand-shell-secondary-text, #ffffff);
+  --muted: var(--brand-shell-muted, #f4f6f9);
+  --muted-foreground: var(--brand-shell-muted-text, #64748b);
+  --accent: var(--brand-primary, #ffd700);
+  --accent-foreground: var(--brand-text-dark, #333333);
+  --destructive: var(--brand-status-danger, #dc2626);
+  --border: var(--brand-shell-border, #e5e7eb);
+  --input: var(--brand-shell-border, #e5e7eb);
+  --ring: var(--brand-blue, #1f4ea7);
+
+  --sidebar: var(--brand-sidebar-bg, #4caf50);
+  --sidebar-foreground: var(--brand-sidebar-text, #ffffff);
+  --sidebar-primary: var(--brand-sidebar-active-bg, #1f4ea7);
+  --sidebar-primary-foreground: var(--brand-sidebar-active-text, #ffffff);
+  --sidebar-accent: color-mix(in srgb, var(--brand-sidebar-bg, #4caf50) 85%, #000000);
+  --sidebar-accent-foreground: var(--brand-sidebar-text, #ffffff);
+  --sidebar-border: var(--brand-sidebar-border, #2e7d32);
+  --sidebar-ring: var(--brand-primary, #ffd700);
+}

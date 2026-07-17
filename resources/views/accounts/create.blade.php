@@ -57,10 +57,11 @@
                     <option value="">Select role</option>
                     <option value="admin" {{ old('role') === 'admin' ? 'selected' : '' }}>Admin</option>
                     <option value="staff" {{ old('role') === 'staff' ? 'selected' : '' }}>Staff</option>
+                    <option value="developer" {{ old('role') === 'developer' ? 'selected' : '' }}>Developer</option>
                     <option value="faculty" {{ old('role') === 'faculty' ? 'selected' : '' }}>Faculty</option>
                     <option value="student" {{ old('role') === 'student' ? 'selected' : '' }}>Student</option>
                 </select>
-                <p class="accounts-form-hint">Admin: full access · Staff: daily operations · Faculty/Student: limited.</p>
+                <p class="accounts-form-hint">Admin: full access · Staff: daily operations · Developer: branding/theme · Faculty/Student: limited.</p>
             </div>
 
             <button type="submit" class="accounts-btn accounts-btn--primary w-100">Create user</button>

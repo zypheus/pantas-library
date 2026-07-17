@@ -301,11 +301,10 @@ class StudentController extends Controller
         return view('students.show', compact('student'));
     }
 
-    // Pending list
+    // Pending list (legacy route — unified queue lives at pending.index)
     public function pending()
     {
-        $pendingStudents = PendingStudent::orderBy('lastname')->get();
-        return view('students.pending', compact('pendingStudents'));
+        return redirect()->route('pending.index');
     }
 
     // Approve pending student → move to students table

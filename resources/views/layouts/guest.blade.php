@@ -8,6 +8,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <link rel="stylesheet" href="{{ asset(config('branding.css_path')) }}">
+        <link rel="stylesheet" href="{{ url('/branding/theme.css') }}">
         <link rel="stylesheet" href="{{ asset('css/brand-typography.css') }}">
 
         <!-- Shared-hosting friendly: avoid Vite build dependency -->

@@ -52,6 +52,7 @@
                         <select name="role" id="role" class="form-select" required>
                             <option value="admin" {{ old('role', $user->role) === 'admin' ? 'selected' : '' }}>Admin</option>
                             <option value="staff" {{ old('role', $user->role) === 'staff' ? 'selected' : '' }}>Staff</option>
+                            <option value="developer" {{ old('role', $user->role) === 'developer' ? 'selected' : '' }}>Developer</option>
                             <option value="faculty" {{ old('role', $user->role) === 'faculty' ? 'selected' : '' }}>Faculty</option>
                             <option value="student" {{ old('role', $user->role) === 'student' ? 'selected' : '' }}>Student</option>
                         </select>
@@ -74,7 +75,7 @@
                     <dt class="text-muted small">Current role</dt>
                     <dd class="mb-2">
                         @php
-                            $roleClass = in_array($user->role, ['admin', 'staff', 'faculty', 'student'], true)
+                            $roleClass = in_array($user->role, ['admin', 'staff', 'faculty', 'student', 'developer'], true)
                                 ? $user->role
                                 : 'default';
                         @endphp

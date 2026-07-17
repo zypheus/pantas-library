@@ -24,6 +24,7 @@ class AdminShell
             'email' => $user->email,
             'role' => $user->role,
             'isAdmin' => $user->role === 'admin',
+            'isDeveloper' => $user->role === 'developer',
             'initials' => $user->initials(),
             'avatarUrl' => $user->profilePictureUrl(),
         ];

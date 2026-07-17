@@ -13,6 +13,7 @@ class AuthController extends Controller
             $role = auth()->user()->role;
             return match ($role) {
                 'admin', 'staff' => redirect()->route('book.index'),
+                'developer' => redirect()->route('developer.dashboard'),
                 'student', 'faculty' => redirect()->route('landing'),
                 default => redirect()->route('login')->with('error', 'Unauthorized role.'),
             };
@@ -34,7 +35,8 @@ class AuthController extends Controller
 
             return match ($user->role) {
                 'admin', 'staff' => redirect()->intended(route('book.index')),
-                'student', 'faculty' => redirect()->intended('landing'),
+                'developer' => redirect()->intended(route('developer.dashboard')),
+                'student', 'faculty' => redirect()->intended(route('landing')),
                 default => redirect()->route('login')->with('error', 'Unauthorized role.'),
             };
         }

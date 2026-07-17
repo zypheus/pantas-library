@@ -8,6 +8,7 @@
     @include('partials.brand-favicon')
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset(config('branding.css_path')) }}">
+    <link rel="stylesheet" href="{{ url('/branding/theme.css') }}">
     <link rel="stylesheet" href="{{ asset('css/books/landing.css') }}">
     <link rel="stylesheet" href="{{ asset('css/site-responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/brand-typography.css') }}">

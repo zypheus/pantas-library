@@ -9,6 +9,7 @@
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset(config('branding.css_path')) }}">
+    <link rel="stylesheet" href="{{ url('/branding/theme.css') }}">
 
     @stack('styles')
     @yield('styles')

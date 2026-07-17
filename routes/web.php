@@ -39,19 +39,28 @@ use App\Http\Controllers\OpenLibraryCopyCatalogController;
 use App\Http\Controllers\CatalogFrameworkAdminController;
 use App\Http\Controllers\CatalogMarcSelectOptionsController;
 use App\Http\Controllers\EmployeeIdCardController;
+use App\Http\Controllers\ThemeCssController;
+use App\Http\Controllers\Developer\DeveloperDashboardController;
 use Carbon\Carbon;
 use App\Models\Book;
 
 // =============================
 // Public Routes
 // =============================
+Route::get('/branding/theme.css', ThemeCssController::class)->name('branding.theme');
+
 Route::get('/design-system', function () {
     return Inertia::render('DesignSystem');
 })->name('design-system');
 
 Route::get('/', function () {
-    if (auth()->check() && in_array(auth()->user()->role, ['admin', 'staff'], true)) {
-        return redirect()->route('book.index');
+    if (auth()->check()) {
+        return match (auth()->user()->role) {
+            'admin', 'staff' => redirect()->route('book.index'),
+            'developer' => redirect()->route('developer.dashboard'),
+            'student', 'faculty' => redirect()->route('landing'),
+            default => redirect()->route('landing'),
+        };
     }
 
     return view('index');
@@ -332,4 +341,33 @@ Route::middleware(['auth', 'can:isAdmin'])->group(function () {
     Route::delete('/admin/catalog-select-options', [CatalogMarcSelectOptionsController::class, 'destroy'])
         ->name('admin.catalog_select_options.destroy');
 
+});
+
+// =============================
+// Developer Console (appearance / branding only)
+// =============================
+Route::middleware(['auth', 'can:isDeveloper'])->prefix('developer')->name('developer.')->group(function () {
+    Route::get('/', [DeveloperDashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/branding', [DeveloperDashboardController::class, 'branding'])->name('branding');
+    Route::get('/colors', [DeveloperDashboardController::class, 'colors'])->name('colors');
+    Route::get('/typography', [DeveloperDashboardController::class, 'typography'])->name('typography');
+    Route::get('/landing', [DeveloperDashboardController::class, 'landing'])->name('landing');
+    Route::get('/feature-flags', [DeveloperDashboardController::class, 'featureFlags'])->name('feature_flags');
+    Route::get('/packages', [DeveloperDashboardController::class, 'packages'])->name('packages');
+    Route::get('/design-system', [DeveloperDashboardController::class, 'designSystem'])->name('design_system');
+    Route::get('/system', [DeveloperDashboardController::class, 'system'])->name('system');
+    Route::get('/health', [DeveloperDashboardController::class, 'healthJson'])->name('health');
+
+    Route::post('/appearance/draft', [DeveloperDashboardController::class, 'saveDraft'])->name('appearance.save_draft');
+    Route::post('/appearance/publish', [DeveloperDashboardController::class, 'publish'])->name('appearance.publish');
+    Route::post('/appearance/discard', [DeveloperDashboardController::class, 'discardDraft'])->name('appearance.discard');
+    Route::post('/appearance/reset', [DeveloperDashboardController::class, 'reset'])->name('appearance.reset');
+    Route::post('/appearance/upload', [DeveloperDashboardController::class, 'uploadAsset'])->name('appearance.upload');
+
+    Route::get('/packages/export', [DeveloperDashboardController::class, 'export'])->name('packages.export');
+    Route::post('/packages/import', [DeveloperDashboardController::class, 'import'])->name('packages.import');
+    Route::post('/packages/preset', [DeveloperDashboardController::class, 'applyPreset'])->name('packages.preset');
+    Route::post('/packages/rollback', [DeveloperDashboardController::class, 'rollback'])->name('packages.rollback');
+
+    Route::post('/system/clear-caches', [DeveloperDashboardController::class, 'clearCaches'])->name('system.clear_caches');
 });
