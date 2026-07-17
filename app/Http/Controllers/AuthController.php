@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\AuthRedirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -12,13 +13,14 @@ class AuthController extends Controller
     {
         if (auth()->check()) {
             $role = auth()->user()->role;
-            return match ($role) {
-                'admin', 'staff' => redirect()->route('book.index'),
-                'developer' => redirect()->route('developer.dashboard'),
-                'student', 'faculty' => redirect()->route('landing'),
-                default => redirect()->route('login')->with('error', 'Unauthorized role.'),
-            };
+
+            if (! in_array($role, ['admin', 'staff', 'developer', 'student', 'faculty'], true)) {
+                return redirect()->route('login')->with('error', 'Unauthorized role.');
+            }
+
+            return redirect()->to(AuthRedirect::defaultUrl($role));
         }
+
         return view('auth.login');
     }
 
@@ -34,12 +36,13 @@ class AuthController extends Controller
 
             $user = Auth::user();
 
-            return match ($user->role) {
-                'admin', 'staff' => redirect()->intended(route('book.index')),
-                'developer' => redirect()->intended(route('developer.dashboard')),
-                'student', 'faculty' => redirect()->intended(route('landing')),
-                default => redirect()->route('login')->with('error', 'Unauthorized role.'),
-            };
+            if (! in_array($user->role, ['admin', 'staff', 'developer', 'student', 'faculty'], true)) {
+                Auth::logout();
+
+                return redirect()->route('login')->with('error', 'Unauthorized role.');
+            }
+
+            return AuthRedirect::afterLogin($user, $request);
         }
 
         return back()->withErrors([

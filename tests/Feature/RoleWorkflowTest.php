@@ -48,6 +48,38 @@ class RoleWorkflowTest extends TestCase
             ->assertOk();
     }
 
+    public function test_admin_login_ignores_developer_intended_url(): void
+    {
+        $admin = User::factory()->admin()->create([
+            'password' => bcrypt('password'),
+        ]);
+
+        $this->get('/developer/feature-flags')->assertRedirect(route('login'));
+
+        $this->post('/login', [
+            'email' => $admin->email,
+            'password' => 'password',
+        ])->assertRedirect(route('book.index'));
+
+        $this->actingAs($admin)
+            ->get('/developer/feature-flags')
+            ->assertForbidden();
+    }
+
+    public function test_admin_login_honors_allowed_staff_intended_url(): void
+    {
+        $admin = User::factory()->admin()->create([
+            'password' => bcrypt('password'),
+        ]);
+
+        $this->get('/students')->assertRedirect(route('login'));
+
+        $this->post('/login', [
+            'email' => $admin->email,
+            'password' => 'password',
+        ])->assertRedirect('/students');
+    }
+
     public function test_developer_login_reaches_developer_console(): void
     {
         $developer = User::factory()->create([
