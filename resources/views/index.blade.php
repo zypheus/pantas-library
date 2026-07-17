@@ -37,9 +37,9 @@
 
                 <a href="#about">ABOUT</a>
                 <a href="{{ route('landing') }}">OPAC</a>
-                <a href="{{ $brand['zendy_url'] }}">ZENDY</a>
-                <a href="#">CONTACT US</a>
-                <a href="{{ url('/rooms/book') }}">ROOM RESERVATIONS</a>
+                <a href="{{ $brand['zendy_url'] }}" target="_blank" rel="noopener noreferrer">ZENDY</a>
+                <a href="#contact">CONTACT US</a>
+                <a href="{{ route('rooms.book') }}">ROOM RESERVATIONS</a>
                 <a href="{{ route('feedback.create') }}" class="feedback-link">FEEDBACK</a>
                 <a href="{{ route('login') }}" class="login-button">LOGIN</a>
 
@@ -128,10 +128,7 @@
             </span>
 
             <h1 id="typing-title">
-
-                Misamis Oriental Institute of Science
-                and Technology (MOIST)
-
+                {{ $brand['school_name'] }}
             </h1>
 
             <p class="welcome-description">
@@ -143,8 +140,8 @@
 
             </p>
 
-            <a href="#" class="learn-btn">
-                Learn More
+            <a href="{{ route('landing') }}" class="learn-btn">
+                Browse catalog
             </a>
 
         </div>
@@ -182,7 +179,7 @@
 
                 Stay informed with the latest campus announcements,
                 seminars, workshops, academic activities,
-                and upcoming events at MOIST.
+                and upcoming events at {{ $brand['school_name'] }}.
 
             </p>
 
@@ -206,11 +203,11 @@
 
             <ul>
 
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="{{ route('landing') }}">Library catalog</a></li>
+                <li><a href="{{ route('patron.register') }}">Register</a></li>
+                <li><a href="{{ route('rooms.book') }}">Room reservations</a></li>
+                <li><a href="{{ route('feedback.create') }}">Feedback</a></li>
 
             </ul>
 
@@ -224,16 +221,16 @@
 
             <ul>
 
-                <li><a href="#">Get Started</a></li>
-                <li><a href="#">My Questions</a></li>
-                <li><a href="#">Download Files</a></li>
-                <li><a href="#">Latest Courses</a></li>
-                <li><a href="#">Academic News</a></li>
+                <li><a href="{{ route('patron.register') }}">Get started</a></li>
+                <li><a href="{{ route('feedback.create') }}">Send feedback</a></li>
+                <li><a href="{{ route('kiosk.scan') }}">Student lookup</a></li>
+                <li><a href="{{ route('landing') }}">Search catalog</a></li>
+                <li><a href="{{ route('login') }}">Staff login</a></li>
 
             </ul>
 
         </div>
- <div class="footer-column">
+ <div class="footer-column" id="contact">
 
             <h3>CONTACT</h3>
 
@@ -250,7 +247,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; {{ date('Y') }} MOIST. All rights reserved.</p>
+        <p>&copy; {{ date('Y') }} {{ $brand['school_name'] }}. All rights reserved.</p>
     </div>
 
     </footer>

@@ -46,6 +46,8 @@
                             <span class="opac-search-query-label">Showing results for <strong>{{ request('search') }}</strong></span>
                         @endif
                         <a href="{{ route('landing', ['view' => ($viewMode ?? 'books')]) }}" class="opac-search-clear-link">Clear search</a>
+                        <a href="{{ route('home') }}" class="opac-search-clear-link">Home</a>
+                        <a href="{{ route('login') }}" class="opac-search-clear-link">Login</a>
                     </div>
                 </form>
             </div>
@@ -61,6 +63,10 @@
                 <a href="{{ route('home') }}" class="opac-nav-link">Home</a>
                 <a href="{{ route('kiosk.scan') }}" class="opac-nav-link">Student lookup</a>
                 <a href="{{ route('landing') }}" class="opac-nav-link fw-semibold">Catalog</a>
+                <a href="{{ route('patron.register') }}" class="opac-nav-link">Register</a>
+                <a href="{{ route('rooms.book') }}" class="opac-nav-link">Room booking</a>
+                <a href="{{ route('feedback.create') }}" class="opac-nav-link">Feedback</a>
+                <a href="{{ route('login') }}" class="opac-nav-link">Login</a>
             </nav>
             <form action="{{ route('logout') }}" method="POST" class="mb-0" hidden>
                 @csrf
@@ -166,9 +172,19 @@
                         </a>
                     </li>
                     <li>
-                        <a class="opac-link-card" href="{{ route('home') }}">
+                        <a class="opac-link-card" href="{{ $brand['school_home_url'] }}">
                             <img src="{{ $brand['logo_compact_url'] }}" alt="{{ $brand['school_name'] }}" class="opac-link-card__img">
-                            <span class="opac-link-card__label">Home</span>
+                            <span class="opac-link-card__label">School home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="opac-link-card" href="{{ route('rooms.book') }}">
+                            <span class="opac-link-card__label">Room reservations</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="opac-link-card" href="{{ route('feedback.create') }}">
+                            <span class="opac-link-card__label">Feedback</span>
                         </a>
                     </li>
                 </ul>

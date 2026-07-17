@@ -1,6 +1,7 @@
 import { AppBreadcrumb } from '@/components/layout/AppBreadcrumb';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { AppSidebar } from '@/components/layout/AppSidebar';
+import { ShellFlashMessages } from '@/components/layout/ShellFlashMessages';
 import { resolveBreadcrumbs } from '@/config/adminNavigation';
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -10,6 +11,7 @@ export function AdminShellLayout({
     breadcrumbOverride,
     contentRef,
     children,
+    flash = null,
 }) {
     const breadcrumbs = resolveBreadcrumbs(routeName, breadcrumbOverride);
 
@@ -21,8 +23,9 @@ export function AdminShellLayout({
                     <AppHeader />
                     <div
                         data-slot="admin-main"
-                        className="flex flex-1 flex-col gap-3 p-3 sm:gap-4 sm:p-4 md:p-6"
+                        className="flex flex-1 flex-col gap-4 p-4 md:p-6"
                     >
+                        <ShellFlashMessages flash={flash} />
                         <AppBreadcrumb items={breadcrumbs} />
                         {children}
                         {contentRef ? (

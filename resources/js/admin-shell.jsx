@@ -25,6 +25,7 @@ function AdminShellApp({ shellProps }) {
         <ShellPropsProvider value={shellProps}>
             <AdminShellLayout
                 routeName={shellProps.routeName}
+                flash={shellProps.flash}
                 contentRef={contentRef}
             />
         </ShellPropsProvider>

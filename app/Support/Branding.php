@@ -32,9 +32,10 @@ class Branding
             'favicon_url' => asset($resolved['favicon']),
             'banner_url' => asset($resolved['banner']),
             'partner_logo_url' => asset($resolved['partner_logo']),
+            'partner_zendy_url' => asset($resolved['partner_logo']),
             'default_book_url' => asset($resolved['default_book']),
             'theme_css_url' => url('/branding/theme.css'),
-            'zendy_url' => $resolved['external_resource_url'] ?: '#',
+            'zendy_url' => $resolved['external_resource_url'] ?: 'https://zendy.io',
             'favicon_mime' => 'image/svg+xml',
             'version' => $resolved['version'],
         ];

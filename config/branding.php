@@ -14,7 +14,7 @@ return [
     'staff_portal_subtitle' => env('BRANDING_STAFF_PORTAL_SUBTITLE', 'Staff Portal'),
 
     'school_home_url' => env('BRANDING_SCHOOL_HOME_URL', '/'),
-    'external_resource_url' => env('BRANDING_EXTERNAL_RESOURCE_URL', ''),
+    'external_resource_url' => env('BRANDING_EXTERNAL_RESOURCE_URL', 'https://zendy.io'),
 
     'logo' => env('BRANDING_LOGO', 'images/branding/logo.svg'),
     'logo_landscape' => env('BRANDING_LOGO_LANDSCAPE', 'images/branding/logo-landscape.svg'),

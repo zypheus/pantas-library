@@ -6,7 +6,7 @@ import { usePage } from '@inertiajs/react';
  * Inertia wrapper using the same admin shell as Blade pages.
  */
 export default function AdminLayout({ children, breadcrumbOverride }) {
-    const { routeName, auth, branding, adminActivity } = usePage().props;
+    const { routeName, auth, branding, adminActivity, flash } = usePage().props;
 
     return (
         <ShellPropsProvider
@@ -15,9 +15,14 @@ export default function AdminLayout({ children, breadcrumbOverride }) {
                 branding,
                 adminActivity,
                 routeName,
+                flash,
             }}
         >
-            <AdminShellLayout routeName={routeName} breadcrumbOverride={breadcrumbOverride}>
+            <AdminShellLayout
+                routeName={routeName}
+                breadcrumbOverride={breadcrumbOverride}
+                flash={flash}
+            >
                 {children}
             </AdminShellLayout>
         </ShellPropsProvider>

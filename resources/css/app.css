@@ -48,3 +48,55 @@
     font-family: var(--font-sans);
   }
 }
+
+@layer components {
+  .admin-shell [data-slot="sidebar-inset"],
+  .developer-shell [data-slot="sidebar-inset"] {
+    @apply bg-muted/30;
+  }
+
+  .developer-shell {
+    --sidebar: #0f172a;
+    --sidebar-foreground: #f8fafc;
+    --sidebar-primary: #334155;
+    --sidebar-primary-foreground: #f8fafc;
+    --sidebar-accent: #1e293b;
+    --sidebar-accent-foreground: #f8fafc;
+    --sidebar-border: #334155;
+    --sidebar-ring: #64748b;
+  }
+
+  .admin-shell-body {
+    @apply bg-background antialiased;
+  }
+
+  .admin-blade-slot {
+    @apply rounded-xl border bg-card p-4 shadow-sm md:p-6;
+  }
+
+  .admin-blade-slot .table {
+    @apply mb-0;
+  }
+
+  .admin-blade-slot .card {
+    @apply border-border shadow-none;
+  }
+
+  .admin-blade-slot .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .admin-blade-slot .btn-success {
+    background-color: var(--brand-button-bg, var(--primary));
+    border-color: var(--brand-button-bg, var(--primary));
+  }
+
+  .admin-blade-slot h1,
+  .admin-blade-slot h2,
+  .admin-blade-slot h3,
+  .admin-blade-slot .page-title {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+}

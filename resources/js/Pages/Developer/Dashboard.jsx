@@ -1,5 +1,6 @@
 import { Head, Link } from '@inertiajs/react';
 import DeveloperLayout from '@/Layouts/DeveloperLayout';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Dashboard({ overview }) {
@@ -60,13 +61,23 @@ export default function Dashboard({ overview }) {
                         <CardTitle>Quick actions</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-wrap gap-2">
-                        <Link href="/developer/colors" className="rounded-md border px-3 py-2 text-sm hover:bg-muted">Colors & tokens</Link>
-                        <Link href="/developer/packages" className="rounded-md border px-3 py-2 text-sm hover:bg-muted">Import / export</Link>
-                        <Link href="/developer/feature-flags" className="rounded-md border px-3 py-2 text-sm hover:bg-muted">Feature flags</Link>
-                        <Link href="/developer/design-system" className="rounded-md border px-3 py-2 text-sm hover:bg-muted">Design system</Link>
-                        <a href="/branding/theme.css" target="_blank" rel="noreferrer" className="rounded-md border px-3 py-2 text-sm hover:bg-muted">
-                            Live theme.css
-                        </a>
+                        <Button variant="outline" size="sm" asChild>
+                            <Link href="/developer/colors">Colors & tokens</Link>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
+                            <Link href="/developer/packages">Import / export</Link>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
+                            <Link href="/developer/feature-flags">Feature flags</Link>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
+                            <Link href="/developer/design-system">Design system</Link>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
+                            <a href="/branding/theme.css" target="_blank" rel="noreferrer">
+                                Live theme.css
+                            </a>
+                        </Button>
                     </CardContent>
                 </Card>
             </div>

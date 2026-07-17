@@ -80,7 +80,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
     Route::post('/reset-password', [NewPasswordController::class, 'store'])->name('password.store');
 });
-Route::get('/index', fn() => redirect()->route('book.index'));
+Route::get('/index', fn () => redirect()->route('home'));
 Route::get('/filter/years', [BookController::class, 'getYears']);
 Route::get('/filter/courses', [BookController::class, 'getCourses']);
 Route::get('/rooms/book', [RoomReservationController::class, 'create'])->name('rooms.book');

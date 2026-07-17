@@ -88,6 +88,10 @@ class AdminShell
             'routeName' => $request->route()?->getName(),
             'adminActivity' => self::adminActivity($user),
             'branding' => Branding::forShell(),
+            'flash' => [
+                'success' => $request->session()->get('success'),
+                'error' => $request->session()->get('error'),
+            ],
         ];
     }
 }
